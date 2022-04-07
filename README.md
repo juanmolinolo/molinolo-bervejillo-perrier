@@ -4,7 +4,7 @@
 |-----------
 | Fundamentos de Ingeniería de Software
 ID M4A - Docente: Gerardo Maturro
-Estudiantes: Juan Molinolo - Juan Bervejilo - Milagros Perrier
+Estudiantes: Juan Molinolo - Juan Bervejillo - Milagros Perrier
 
 
 
