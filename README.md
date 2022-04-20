@@ -22,7 +22,7 @@ Pushea los cambios a la branch seleccionada. Importante: nunca pushear a la main
 ### - git pull origin branch
 Pullea todos los cambios de la branch seleccionada. Importante: verificar que siempre trabajen sobre la versión más reciente. Para esto, ingresar comando **git pull origin main** antes de empezar a trabajar.
 
-## - git checkout branch
+### - git checkout branch
 Para desplazarte a otra rama.
 
 
