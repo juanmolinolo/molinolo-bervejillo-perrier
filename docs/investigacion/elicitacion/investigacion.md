@@ -1,4 +1,5 @@
 # Evidencia de actividades de investigación
+### Introducción al concepto de NFTs
 
 Los NFTs (acrónimo para Non-Fungible Token) son un tipo de token criptográfico no-fungible que funciona y subsiste, al igual que las criptomonedas, en un sistema de blockchain. La gran mayoria de los NFTs utilizan la plataforma de Ethereum, una de las criptomonedas más utilizadas, para su almacenamiento, compra y venta. A nivel funcional, estos NFTs operan de una manera muy similar a Bitcoin y Ethereum, pero con una diferencia clave; los NFTs, como indica su sigla, son no-fungibles. Cada NFTs posee características unicas, por los que no existen dos NFTs iguales. Aunque un NFT puede ser tecnicamente cualquier tipo de dato, su gran popularidad se debe a su uso para representar arte digital. Los NFTs se utilizan para otorgar creedenciales que certifican la propiedad del arte digital, y el arte en sí se almacena por fuera del blockchain.
 
@@ -8,4 +9,12 @@ Al compartir muchas de las características de las criptomonedas, la aparición 
 
 A pesar de estas controversias, la popularidad de los NFTs experimentó un crecimiento exponencial, dando a luz variedad de mercados online con el único fín de comprar, vender e intercambiar NFTs. Algunos de estos son [Binance](https://www.binance.com/en/nft/home), [OpenSea](https://opensea.io/) y [Rarible](https://rarible.com/).
 
-# Referencias a fuentes de información
+### Referencias a fuentes de información
+
+[Wikipedia: Token no fungible](https://es.wikipedia.org/wiki/Token_no_fungible#:~:text=NFT%20significa%20%22token%20no%20fungible,canciones%20o%20elementos%20de%20videojuegos.)
+
+[The Verge: NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
+
+[Forbes: What is an NFT? Non-Fungible Tokens Explained](https://www.forbes.com/advisor/investing/cryptocurrency/nft-non-fungible-token/)
+
+[The Motley Fool: Best NFT Marketplaces](https://www.fool.com/the-ascent/cryptocurrency/nft-marketplaces/)
