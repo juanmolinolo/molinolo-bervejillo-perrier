@@ -9,6 +9,13 @@ Al compartir muchas de las características de las criptomonedas, la aparición 
 
 A pesar de estas controversias, la popularidad de los NFTs experimentó un crecimiento exponencial, dando a luz variedad de mercados online con el único fín de comprar, vender e intercambiar NFTs. Algunos de estos son [Binance](https://www.binance.com/en/nft/home), [OpenSea](https://opensea.io/) y [Rarible](https://rarible.com/).
 
+### Reglas del negocio
+El mercado de los NFTs es muy nuevo y ha ganado relevancia en un corto tiempo. Esto explica por qué aún nos encontramos en gran medida con un vacío legal cuando hablamos del negocio de los NFTs. Los precios se rigen por la popularidad del producto, y a la vez por la valuación de la criptomoneda en la que se vende, y es por esto que una obra puede subir o bajar de precio abruptamente en cuestión de unos pocos días, sin ninguna regulación legal.
+
+Sin embargo, sí hay ciertas reglas que un market de NFTs debe cumplir. Todas las transacciones de obras por criptomonedas debe darse en blockchain, porque es el sistema en el que estas tecnologías funcionan y asegura la seguridad de la transacción y la autenticidad de la moneda y del producto. Además, todo lo que se encuentra en la blockchain es trazable de modo que todos los NFTs no pueden perderse. Es responsabilidad del marketplace asegurar la transparencia y autenticidad de la compraventa de NFTs.
+
+También puede tomarse como regla del negocio la ley de propiedad intelectual, que protege el derecho moral de toda creación artística y da derecho de reproducción y distribución a su autor. Los NFTs deberán tomarse, en este sentido, al igual que obras de arte y los derechos de autor deben ser protegidos.
+
 ### Referencias a fuentes de información
 
 [Wikipedia: Token no fungible](https://es.wikipedia.org/wiki/Token_no_fungible#:~:text=NFT%20significa%20%22token%20no%20fungible,canciones%20o%20elementos%20de%20videojuegos.)
@@ -18,3 +25,5 @@ A pesar de estas controversias, la popularidad de los NFTs experimentó un creci
 [Forbes: What is an NFT? Non-Fungible Tokens Explained](https://www.forbes.com/advisor/investing/cryptocurrency/nft-non-fungible-token/)
 
 [The Motley Fool: Best NFT Marketplaces](https://www.fool.com/the-ascent/cryptocurrency/nft-marketplaces/)
+
+[CE Consulting: NFTs - Situacion legal de los archivos digitales] (https://ceconsulting.es/blog-ceconsulting/nfts-situacion-legal-archivos-digitales/)
