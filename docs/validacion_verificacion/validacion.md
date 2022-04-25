@@ -1,0 +1,3 @@
+# Verificación de la especificación
+## Factibilidad del proyecto
+Tras formular la documentación, el modelo conceptual y los casos de uso, podemos deducir que la solución propuesta es adecuada. Creemos que un mercado de NFTs que cumpla con los requisitos propuestos sería factible. Dado que las tecnologías a utilizar (Node.Js y GitHub) son nuevas para los integrantes del equipo, el proyecto puede presentar dificultades, pero creemos que ninguno de los requisitos funcionales esta fuera de nuestro alcance.
