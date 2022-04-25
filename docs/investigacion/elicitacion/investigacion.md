@@ -1,11 +1,10 @@
 # Evidencia de actividades de investigación
 ### Introducción al concepto de NFTs
-
 Los NFTs (acrónimo para Non-Fungible Token) son un tipo de token criptográfico no-fungible que funciona y subsiste, al igual que las criptomonedas, en un sistema de blockchain. La gran mayoria de los NFTs utilizan la plataforma de Ethereum, una de las criptomonedas más utilizadas, para su almacenamiento, compra y venta. A nivel funcional, estos NFTs operan de una manera muy similar a Bitcoin y Ethereum, pero con una diferencia clave; los NFTs, como indica su sigla, son no-fungibles. Cada NFTs posee características unicas, por los que no existen dos NFTs iguales. Aunque un NFT puede ser tecnicamente cualquier tipo de dato, su gran popularidad se debe a su uso para representar arte digital. Los NFTs se utilizan para otorgar creedenciales que certifican la propiedad del arte digital, y el arte en sí se almacena por fuera del blockchain.
 
 Estos tokens unicos tuvieron como resultado la aparición de multiples mercados para comprar y vender NFTs, fomentando su crecimiento y popularidad, y generando un importante mercado de arte. Al día de hoy, existen NFTs valorizados por arriba de los seis dígitos (en dólares) que, al igual que en el mundo artístico, poseerlos puede hasta proveer un importante estatus social.
 
-Al compartir muchas de las características de las criptomonedas, la aparición de estos NFTs generó muchas de las mismas controversias. Por pertenecer a un sistema de blockchain, el mantenimiento y funcionamiento de los NFTs requiere grandes sumas de electricidad, cómo también importantes componentes de hardware, por lo que conlleva una gran huella de carbono. También, estos mercados no regulados, sumados al anominimato e irreversibilidad que significa un sistema de blockchain son el ambiente perfecto para estafadores y lavado de dinero. Continuando, la naturaleza del sistema de propiedad, en la que el NFT provee unicamente las credenciales al arte digital, pero no el arte en sí, ha puesto en cuestion la necesidad de los NFTs, y dado que muchos de los mercados de NFTs permiten visualizar y descargar el arte, muchos critican la validez de la propiedad del arte.
+Al compartir muchas de las características de las criptomonedas, la aparición de estos NFTs generó muchas de las mismas controversias. Por pertenecer a un sistema de blockchain, el mantenimiento y funcionamiento de los NFTs requiere grandes sumas de electricidad, como también importantes componentes de hardware, por lo que conlleva una gran huella de carbono. También, estos mercados no regulados, sumados al anominimato e irreversibilidad que significa un sistema de blockchain son el ambiente perfecto para estafadores y lavado de dinero. Continuando, la naturaleza del sistema de propiedad, en la que el NFT provee unicamente las credenciales al arte digital, pero no el arte en sí, ha puesto en cuestion la necesidad de los NFTs, y dado que muchos de los mercados de NFTs permiten visualizar y descargar el arte, muchos critican la validez de la propiedad del arte.
 
 A pesar de estas controversias, la popularidad de los NFTs experimentó un crecimiento exponencial, dando a luz variedad de mercados online con el único fín de comprar, vender e intercambiar NFTs. Algunos de estos son [Binance](https://www.binance.com/en/nft/home), [OpenSea](https://opensea.io/) y [Rarible](https://rarible.com/).
 
@@ -17,7 +16,6 @@ Sin embargo, sí hay ciertas reglas que un market de NFTs debe cumplir. Todas la
 También puede tomarse como regla del negocio la ley de propiedad intelectual, que protege el derecho moral de toda creación artística y da derecho de reproducción y distribución a su autor. Los NFTs deberán tomarse, en este sentido, al igual que obras de arte y los derechos de autor deben ser protegidos.
 
 ### Referencias a fuentes de información
-
 [Wikipedia: Token no fungible](https://es.wikipedia.org/wiki/Token_no_fungible#:~:text=NFT%20significa%20%22token%20no%20fungible,canciones%20o%20elementos%20de%20videojuegos.)
 
 [The Verge: NFTs, explained](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
