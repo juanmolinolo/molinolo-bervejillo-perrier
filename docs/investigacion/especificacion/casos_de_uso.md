@@ -1,5 +1,4 @@
 # Casos de uso 
-
 ### Artista que quiere subir un NFT y ponerlo a la venta
 Entra a la página
 Inicia sesión con su usuario y contraseña
