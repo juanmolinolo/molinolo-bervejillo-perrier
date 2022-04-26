@@ -27,9 +27,9 @@ Fecha de entrega: 18-oct-2021
 
 ## Especificación
 
-Definición de requerimientos funcionales y no funcionales
+//Definición de requerimientos funcionales y no funcionales
 
-User Stories / Use Cases detallados
+//User Stories / Use Cases detallados
 
 //Bocetos de IU
 
