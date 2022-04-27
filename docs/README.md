@@ -41,9 +41,9 @@ Fecha de entrega: 18-oct-2021
 
 ## Reflexión
 
-Detalle del trabajo individual
+//Detalle del trabajo individual
 
-Técnicas aplicadas y aprendizajes
+//Técnicas aplicadas y aprendizajes
 
 
 
