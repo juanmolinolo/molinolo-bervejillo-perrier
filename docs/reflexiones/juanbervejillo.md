@@ -1,1 +1,11 @@
 # Reflexión personal: Juan Bervejillo
+Para esta primera entrega, quedé muy conforme con el rendimiento del grupo. Logramos ponernos de acuerdo para todo y no hubo inconvenientes, ya que todos trabajamos y aportamos al proyecto. 
+En mi caso, al principio me costó utilizar la herramienta de git, pero gracias a mis compañeros pude aprender cómo funcionaba. 
+
+En relación a mis aportes sobre la entrega, es dificil decir bien que hizo cada uno, ya que nos juntamos a trabajar y todos aportamos en la mayoría de las partes. Si tuviera que decir algo en lo que me enfoqué un poco más, fue la parte de elicitación de usuario, pero el resto del equipo también participó, agregando y modificando cosas. Luego para el resto de la documentación, o trabajé en conjunto, o me tomé el timepo de leer lo que hizo alguien más y sugerí detalles a modificar o agregar. 
+
+Hablando de las técnicas aplicadas y aprendidas, sin duda aprendí a utilizar git de manera fluida, sin mayores inconvenientes a la hora de trabajar en el repositorio. También logré entender cómo aplicar el proceso de ingeniería de requerimientos a una situación real, lo cual considero muy importante para un futuro como programador. 
+En un momento, traté de aprender como funcionaba 'marvel', y así poder crear los bocetos iu, pero como vimos que era algo complejo, decidimos hacerlos en un pizarrón y escanearlo, ya que era más sencillo. Es por esto que no logré aprender a hacer bocetos de iu online.
+Por último, aprendí a utilizar visual studio code desde una posición distinta. Ya había utilizado este IDE anteriormente, pero para programar haskell. Durante esta entrega pude aprender a utilizarlo para generar la documentación, y como utilizarlo en conjunto con git. 
+
+En general, durante esta primera entrega logré aprender diferentes técnicas de ingeniería de software aplicadas a un caso real, el mercado de NFTs. Esto fue gracias al poder trabajar en grupo sin conflictos, lo que me permitió aportar a la documentación en la mayoría de las secciones.
