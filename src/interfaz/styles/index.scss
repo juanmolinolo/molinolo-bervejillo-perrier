@@ -1,6 +1,6 @@
 @use "@material/theme" with (
-  $primary: #00bcd4,
-  $secondary: #f44336,
+  $primary: #696868,
+  $secondary: #000000,
   $background: #c7c7c7,
 );
 @use '@material/button/mdc-button';
@@ -31,50 +31,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin: 0px auto;
-}
-
-.app-bar {
-  position: absolute;
-}
-
-.mdc-top-app-bar {
-  z-index: 7;
-  @include icon-button.core-styles;
-}
-
-section {
+//contenidos de los botones del tab
+.mdc-tab__content {
   text-align: center;
-}
-
-.content {
-  margin: 10rem auto;
-  padding-bottom: 20rem;
-  text-align: center;
-}
-
-.sample-content--hidden {
-  display: none;
-}
-
-.mdc-tab {
-    background-color: #67daff;
-}
-
-.mdc-tab__content .mdc-tab__text-label {
-    color: black;
-}
-
-.mdc-text-field {
-    margin: 1rem auto;
-}
-
-.button {
-  margin-top: 1rem;
-}
-
-.mdc-snackbar__actions .mdc-button__label {
-  color: #67daff;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
