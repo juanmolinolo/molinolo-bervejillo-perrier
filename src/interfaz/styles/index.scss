@@ -31,8 +31,24 @@ html {
   scroll-behavior: smooth;
 }
 
+.nav_bar_main{
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+  max-width: 100vw;
+  height: 72px;
+  top: 0px;
+  position: sticky;
+  z-index: 120;
+  transition: top 0.5s ease 0s;
+  background-color: rgb(255, 255, 255);
+}
+
+.middle_partition{
+  display: flex;
+  width: 100%;
+}
+
 //contenidos de los botones del tab
 .mdc-tab__content {
   text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Rooboto";
 }
