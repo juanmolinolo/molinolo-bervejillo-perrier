@@ -1,3 +1,8 @@
+@use "@material/theme" with (
+  $primary: #7744ef,
+  $secondary: #3685f4,
+  $background: #c7c7c7,
+);
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/drawer";
@@ -18,17 +23,78 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
-@use "@material/layout-grid/mdc-layout-grid";
 
 @include card.core-styles;
 @include textfield.core-styles;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px auto;
+}
+
+.app-bar {
+  position: absolute;
+}
+
+.mdc-top-app-bar {
+  z-index: 7;
+  @include icon-button.core-styles;
+}
+
+section {
+  text-align: center;
+}
+
+.content {
+  margin: 10rem auto;
+  padding-bottom: 20rem;
+  text-align: center;
+  display: flex;
+}
+
+.sample-content--hidden {
+  display: none;
+}
+
+.mdc-tab {
+    background-color: #c6b0ff;
+}
+
+.mdc-tab__content .mdc-tab__text-label {
+    color: black;
+}
+
+.mdc-text-field {
+    margin: 1rem auto;
+}
+
+.button {
+  margin-top: 1rem;
+}
+
+.mdc-snackbar__actions .mdc-button__label {
+  color: #ab67ff;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
 .my-card-content {
     padding: 16px;
 }
 
 .my-card__media {
-    background-color: blue;
+    background-color: rgb(32, 32, 32);
+}
+
+.mdc-layout-grid__cell{
+    padding: 20px;
 }
 
 .my-card {
