@@ -18,13 +18,19 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/layout-grid/mdc-layout-grid";
 
 @include card.core-styles;
 @include textfield.core-styles;
 
 .my-card-content {
     padding: 16px;
-  }
+}
+
+.my-card__media {
+    background-color: blue;
+}
+
 .my-card {
    height: 350px;
     width: 350px;
