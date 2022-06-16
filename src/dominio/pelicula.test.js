@@ -1,4 +1,4 @@
-import Pelicula from './pelicula.mjs';
+import Pelicula from './nft.mjs';
 
 test('creación de una película', () => {
   let unaPelicula = new Pelicula("Indiana Jones", "Aventura", 1981);

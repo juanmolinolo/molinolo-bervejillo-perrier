@@ -4,26 +4,318 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
+  <link rel="stylesheet" type="text/css" href="styles/index.scss" />
 </head>
 
 <body>
-  <div class="top_section">
-    <nav class="nav_bar_main">
-      <div class="left_partition">
-        <button class="mdc-button">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">NFT Home</span>
-       </button>
-      </div>
-      <div display= "flex" width="100%" class="middle_partition">
 
-      </div>
-      <div class="right_partition">
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <span class="mdc-top-app-bar__title">NFTs</span>
+      </section>
+    </div>
 
+    <div class="mdc-tab-bar" role="tablist">
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area">
+          <div class="mdc-tab-scroller__scroll-content">
+
+            <button class="mdc-tab mdc-tab--active sample-content-tab" role="tab" aria-selected="true" tabindex="0">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">FEED</span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline sample-content-tab-indicator"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+
+            <button class="mdc-tab sample-content-tab" role="tab" aria-selected="false" tabindex="1">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">FAVORITOS</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+          </div>
+        </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </header>
+
+  <main class="mdc-top-app-bar--fixed-adjust">
+
+    <aside class="mdc-drawer">
+      <header class="mdc-drawer__header">Categorías</header>
+      <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+          <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+              <input type="checkbox"
+                     class="mdc-checkbox__native-control"
+                     id="checkbox-1"/>
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                     viewBox="0 0 24 24">
+                  <path class="mdc-checkbox__checkmark-path"
+                        fill="none"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
+              <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="checkbox-1">Filtro 1</label>
+          </div>
+
+          <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+              <input type="checkbox"
+                     class="mdc-checkbox__native-control"
+                     id="checkbox-2"/>
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                     viewBox="0 0 24 24">
+                  <path class="mdc-checkbox__checkmark-path"
+                        fill="none"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
+              <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="checkbox-2">Filtro 2</label>
+          </div>
+
+          <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+              <input type="checkbox"
+                     class="mdc-checkbox__native-control"
+                     id="checkbox-3"/>
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                     viewBox="0 0 24 24">
+                  <path class="mdc-checkbox__checkmark-path"
+                        fill="none"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
+              <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="checkbox-3">Filtro 3</label>
+          </div>
+  
+          <div class="mdc-slider mdc-slider--range">
+            <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" aria-label="Range slider demo">
+            <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" aria-label="Range slider demo">
+            <div class="mdc-slider__track">
+              <div class="mdc-slider__track--inactive"></div>
+              <div class="mdc-slider__track--active">
+                <div class="mdc-slider__track--active_fill"
+                     style="transform:scaleX(.4); left:30%"></div>
+              </div>
+            </div>
+            <div class="mdc-slider__thumb" style="left:calc(30%-24px)">
+              <div class="mdc-slider__thumb-knob"></div>
+            </div>
+            <div class="mdc-slider__thumb" style="left:calc(70%-24px)">
+              <div class="mdc-slider__thumb-knob"></div>
+            </div>
+          </div>
+  
+        </nav>
+      </div>
+    </aside>
+
+    <section class="content">
+    
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner wrapper">
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square my-card__media">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+    
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+    
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+    
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="content sample-content--hidden">
+      <div class="mdc-layout-grid">
+        <h1>FAVORITOS</h1>
+        <div class="mdc-layout-grid__inner wrapper">
+          <div class="mdc-layout-grid__cell">
+    
+            <div class="mdc-card my-card">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--square my-card__media">
+                  <div class="mdc-card__media-content my-card-content"></div>
+                </div>
+                <div class="mdc-card__ripple"></div>
+              </div>
+              <div class="mdc-card mdc-card--outlined">
+                Titulo, descripcion, precio
+              </div>
+            </div>
+    
+          </div>
+    
+          </div>
+          </section>
+  </main>
+
 </body>
+
+
+
+
+
+<!-- 
+
+<body>
+  
+  <div class="mdc-tab-bar" role="tablist">
+    <div class="mdc-tab-scroller">
+      <div class="mdc-tab-scroller__scroll-area">
+        <div class="mdc-tab-scroller__scroll-content">
+
+          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">FEED</span>
+            </span>
+            <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+
+          <button class="mdc-tab" role="tab" aria-selected="true" tabindex="1">
+            <span class="mdc-tab__content">
+              <span class="mdc-tab__text-label">FAVORITOS</span>
+            </span>
+            <span class="mdc-tab-indicator mdc-tab-indicator--active">
+              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+            </span>
+            <span class="mdc-tab__ripple"></span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <section class="content">
+
+    
+    
+  </section>
+
+  <section class="content sample-content--hidden">
+    Favoritos
+  </section>
+  
+
+
+</body>
+
+-->
+
 <script src="bundle.js" async></script>
 
 </html>

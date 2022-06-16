@@ -4,10 +4,10 @@ import { MDCTabBar } from '@material/tab-bar';
 import { MDCTextField } from '@material/textfield';
 import { MDCSelect } from '@material/select';
 import {MDCSnackbar} from '@material/snackbar';
-import ListaPeliculas from '../../dominio/lista-peliculas.mjs';
-import Pelicula from '../../dominio/pelicula.mjs';
+import listaNFTs from '../../dominio/listaNFTs.mjs';
+import NFT from '../../dominio/nft.mjs';
 
-const listaPeliculas = new ListaPeliculas();
+const listaNFT = new listaNFTs();
 
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
@@ -33,14 +33,14 @@ addButton.listen('click', () => {
   let year = textFieldYear.value;
   let genre = selectGenre.value;
   try {
-    let newPelicula = new Pelicula(title, genre, year);
-    listaPeliculas.agregar(newPelicula);
+    let newNFT = new NFT(title, genre, year);
+    listaNFT.agregar(newNFT);
   } catch (error) {
     const snackbar = new MDCSnackbar(document.querySelector('.mdc-snackbar'));
     snackbar.labelText = error.message;
     snackbar.open();
   } finally {
-    let peliculas = listaPeliculas.getPeliculas();
-    console.log(peliculas);
+    let nfts = listaNFT.getNFTs();
+    console.log(nfts);
   }
 })
