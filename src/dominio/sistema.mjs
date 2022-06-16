@@ -1,6 +1,6 @@
 import Categoria from "./categoria.mjs";
 
-export class System{
+export class Sistema{
 
     //crea nuevo sistema
     constructor(){
@@ -34,9 +34,10 @@ export class System{
         this.addCategoria("Fotografia");
         this.addCategoria("Ilustraciones");
 
-        this.addNFT("Verano", 200, "el verano es azul", "MILAGROS", "PERRI");
-        this.addNFT("Sunset", 400, "Un maravilloso paisaje", "JuanXD", "PERRI");
-        this.addNFT("Mounstro", 20, "el mounstro es violeta", "PERRI", "JuanXD");
+        this.addNFT("Verano", 200, "El verano azul", "Milagros", "Perri");
+        this.addNFT("Punta del este", 400, "Un maravilloso paisaje", "JuanXD", "Perri");
+        this.addNFT("Criaturas I", 700, "Creaciones de la coleccion Criaturas", "Perri", "JuanXD");
+        this.addNFT("Criaturas II", 750, "Creaciones de la coleccion Criaturas", "Perri", "JuanMoli");
 
     }
 }

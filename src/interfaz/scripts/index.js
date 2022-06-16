@@ -11,6 +11,7 @@ const listaNFT = new listaNFTs();
 
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
+const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 
 const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
 tabBar.listen("MDCTabBar:activated", (activatedEvent) => {

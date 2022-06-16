@@ -25,7 +25,11 @@
 @use "@material/snackbar/mdc-snackbar";
 @use "@material/checkbox";
 @use "@material/form-field";
+@use "@material/dialog";
+@use "@material/fab";
 
+@include fab.core-styles;
+@include dialog.core-styles;
 @include checkbox.core-styles;
 @include form-field.core-styles;
 @include card.core-styles;
@@ -86,6 +90,13 @@ section {
   color: #ab67ff;
 }
 
+.botonAgregarNFT{
+    position: fixed;
+    right: 15px; 
+    bottom: 25px;
+    z-index: 1;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -129,3 +140,4 @@ section {
   overflow: auto;
   z-index: 0;
 }
+
