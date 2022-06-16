@@ -48,6 +48,50 @@
   </header>
 
   <main class="mdc-top-app-bar--fixed-adjust">
+
+    <aside class="mdc-drawer">
+      <header class="mdc-drawer__header">Categorías</header>
+      <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+          <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">
+            <span class="mdc-list-item__ripple"></span>
+            <span class="mdc-list-item__text">Lo</span>
+          </a>
+          <a class="mdc-list-item" href="#">
+            <span class="mdc-list-item__ripple"></span>
+            <span class="mdc-list-item__text">Que</span>
+          </a>
+          <a class="mdc-list-item" href="#">
+            <span class="mdc-list-item__ripple"></span>
+            <span class="mdc-list-item__text">Pinte</span>
+          </a>
+          <a class="mdc-list-item" href="#">
+            <span class="mdc-list-item__ripple"></span>
+            <span class="mdc-list-item__text">todos los filtros</span>
+          </a>
+  
+          <div class="mdc-slider mdc-slider--range">
+            <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" aria-label="Range slider demo">
+            <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" aria-label="Range slider demo">
+            <div class="mdc-slider__track">
+              <div class="mdc-slider__track--inactive"></div>
+              <div class="mdc-slider__track--active">
+                <div class="mdc-slider__track--active_fill"
+                     style="transform:scaleX(.4); left:30%"></div>
+              </div>
+            </div>
+            <div class="mdc-slider__thumb" style="left:calc(30%-24px)">
+              <div class="mdc-slider__thumb-knob"></div>
+            </div>
+            <div class="mdc-slider__thumb" style="left:calc(70%-24px)">
+              <div class="mdc-slider__thumb-knob"></div>
+            </div>
+          </div>
+  
+        </nav>
+      </div>
+    </aside>
+
     <section class="content">
     
       <div class="mdc-layout-grid">
@@ -154,19 +198,6 @@
       <h1>ACA VAN LOS FAVORITOS (en formato grid tambien)</h1>
           </section>
   </main>
-
-  <aside class="mdc-snackbar">
-    <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
-      <div class="mdc-snackbar__label" aria-atomic="false">
-      </div>
-      <div class="mdc-snackbar__actions" aria-atomic="true">
-        <button type="button" class="mdc-button mdc-snackbar__action">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label">Cerrar</span>
-        </button>
-      </div>
-    </div>
-  </aside>
 
 </body>
 

@@ -50,7 +50,7 @@ section {
 }
 
 .content {
-  margin: 10rem auto;
+  margin: 5rem auto;
   padding-bottom: 20rem;
   text-align: center;
   display: flex;
@@ -100,4 +100,26 @@ section {
 .my-card {
    height: 350px;
     width: 350px;
+}
+
+.mdc-top-app-bar--fixed-adjust{
+  display: flex;
+}
+
+.mdc-drawer{
+  margin: 5rem auto;
+  padding-bottom: 20rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.mdc-drawer__header{
+  text-align: center;
+  margin: 5px auto;
+}
+
+.mdc-layout-grid{
+  display: block;
+  overflow: auto;
+  z-index: 0;
 }
