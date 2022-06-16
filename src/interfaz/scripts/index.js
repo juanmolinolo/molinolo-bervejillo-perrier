@@ -23,6 +23,8 @@ tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
   });
 });
 
+
+
 const textFieldTitle = new MDCTextField(document.getElementById('title'));
 const textFieldYear = new MDCTextField(document.getElementById('year'));
 const selectGenre = new MDCSelect(document.querySelector('.mdc-select'));
