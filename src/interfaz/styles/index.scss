@@ -23,9 +23,15 @@
 @use "@material/menu/mdc-menu";
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
+@use "@material/checkbox";
+@use "@material/form-field";
 
+@include checkbox.core-styles;
+@include form-field.core-styles;
 @include card.core-styles;
 @include textfield.core-styles;
+
+
 
 html {
   scroll-behavior: smooth;
