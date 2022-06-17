@@ -160,22 +160,103 @@
             </div>
             <div class="mdc-dialog__content" id="my-dialog-content">
 
-              <label class="mdc-text-field mdc-text-field--filled">
-                <span class="mdc-text-field__ripple"></span>
-                <span class="mdc-floating-label" id="tagtituloNFT">Titulo NFT</span>
-                <input class="mdc-text-field__input" type="text" aria-labelledby="tagtituloNFT">
-                <span class="mdc-line-ripple"></span>
-              </label>
+              <div>
+                <label class="mdc-text-field mdc-text-field--filled textfieldTitulo">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="tagtituloNFT">Titulo NFT</span>
+                  <input class="mdc-text-field__input" type="text" aria-labelledby="tagtituloNFT">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              
+              
+              <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label textfieldPrecio">
+                <div class="mdc-text-field mdc-text-field--no-label">
+                  <div class="mdc-text-field__prefix">$&nbsp;</div>
+                  <input type="text" class="mdc-text-field__input">
+                  <div class="mdc-text-field__suffix">.00</div>
+                  <div class="mdc-line-ripple"></div>
+                </div>
+              </div>
+
+              <div class="mdc-select mdc-select--filled selector-width-class mdc-select--required">
+                <div class="mdc-select__anchor"
+                     role="button"
+                     aria-haspopup="listbox"
+                     aria-required = "true";
+                     aria-expanded="false"
+                     aria-labelledby="demo-label demo-selected-text">
+                  <span class="mdc-select__ripple"></span>
+                  <span id="demo-label" class="mdc-floating-label">Elegir categoria</span>
+                  <span class="mdc-select__selected-text-container">
+                    <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+                  </span>
+                  <span class="mdc-select__dropdown-icon">
+                    <svg
+                        class="mdc-select__dropdown-icon-graphic"
+                        viewBox="7 10 10 5" focusable="false">
+                      <polygon
+                          class="mdc-select__dropdown-icon-inactive"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 10 12 15 17 10">
+                      </polygon>
+                      <polygon
+                          class="mdc-select__dropdown-icon-active"
+                          stroke="none"
+                          fill-rule="evenodd"
+                          points="7 15 12 10 17 15">
+                      </polygon>
+                    </svg>
+                  </span>
+                  <span class="mdc-line-ripple"></span>
+                </div>
+              
+                <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                  <ul class="mdc-list" role="listbox" aria-label="Listbox de categoria">
+                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="none" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item_text">
+                        Ninguna
+                      </span>
+                    </li>
+                    <li class="mdc-list-item" aria-selected="false" data-value="musica" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item__text">
+                        Musica
+                      </span>
+                    </li>
+                    <li class="mdc-list-item" aria-selected="false" data-value="fotografia" aria-disabled="true" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item__text">
+                        Fotografia
+                      </span>
+                    </li>
+                    <li class="mdc-list-item" aria-selected="false" data-value="ilustraciones" role="option">
+                      <span class="mdc-list-item__ripple"></span>
+                      <span class="mdc-list-item__text">
+                        Ilustraciones
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
 
-              <label class="mdc-text-field mdc-text-field--filled">
-                <span class="mdc-text-field__ripple"></span>
-                <span class="mdc-floating-label" id="tagPrecio">Precio</span>
-                <span class="mdc-text-field__affix mdc-text-field__affix--prefix">$</span>
-                <input class="mdc-text-field__input" type="text" aria-labelledby="tagPrecio">
-                <span class="mdc-text-field__affix mdc-text-field__affix--suffix">.00</span>
-                <span class="mdc-line-ripple"></span>
-              </label>
+              <div>
+                <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label textareaDescripcion">
+                  <span class="mdc-notched-outline">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                  </span>
+                  <span class="mdc-text-field__resizer">
+                    <span class="mdc-floating-label" id="tagDescripcion">Descripcion</span>
+                    <textarea class="mdc-text-field__input" rows="6" cols="35" aria-label="Label"></textarea>
+                  </span>
+                </label>
+              </div>
+              
+
 
 
             </div>

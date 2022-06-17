@@ -24,6 +24,25 @@ tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
   });
 });
 
+
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+/*
+El index se obtiene: ${select.selectedIndex} 
+Y el value: "${select.value}"
+*/
+
+dialog.listen('MDCDialog:opened', function() {
+  // Assuming contentElement references a common parent element with the rest of the page's content
+  contentElement.setAttribute('aria-hidden', 'true');
+});
+
+dialog.listen('MDCDialog:closing', function() {
+  contentElement.removeAttribute('aria-hidden');
+});
+
+
 const textFieldTitle = new MDCTextField(document.getElementById('title'));
 const textFieldYear = new MDCTextField(document.getElementById('year'));
 const selectGenre = new MDCSelect(document.querySelector('.mdc-select'));

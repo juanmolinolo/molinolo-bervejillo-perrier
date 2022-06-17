@@ -21,12 +21,14 @@
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
+@use '@material/select';
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
 @use "@material/checkbox";
 @use "@material/form-field";
 @use "@material/dialog";
 @use "@material/fab";
+
 
 @include fab.core-styles;
 @include dialog.core-styles;
@@ -141,3 +143,15 @@ section {
   z-index: 0;
 }
 
+.selector-width-class {
+    width: 300px;
+    z-index: 1;
+}
+
+.textfieldTitulo{
+    width: 300px;
+}
+
+.textfieldPrecio{
+    width: 300px;
+}
