@@ -6,8 +6,9 @@ import { MDCSelect } from '@material/select';
 import {MDCSnackbar} from '@material/snackbar';
 import listaNFTs from '../../dominio/listaNFTs.mjs';
 import NFT from '../../dominio/nft.mjs';
-import Sistema from '../../dominio/sistema.mjs';
+//import Sistema from '../../dominio/sistema.mjs';
 
+//let sistema = new Sistema();
 
 const listaNFT = new listaNFTs();
 
@@ -52,25 +53,6 @@ function agregarNFT() {
 
 
 const select = new MDCSelect(document.querySelector('.mdc-select'));
-
-/*
-El index se obtiene: ${select.selectedIndex} 
-Y el value: "${select.value}"
-*/
-
-dialog.listen('MDCDialog:opened', function() {
-  // Assuming contentElement references a common parent element with the rest of the page's content
-  contentElement.setAttribute('aria-hidden', 'true');
-});
-
-dialog.listen('MDCDialog:closing', function() {
-  contentElement.removeAttribute('aria-hidden');
-});
-
-
-const textFieldTitle = new MDCTextField(document.getElementById('title'));
-const textFieldYear = new MDCTextField(document.getElementById('year'));
-const selectGenre = new MDCSelect(document.querySelector('.mdc-select'));
 
 const addButton = new MDCRipple(document.getElementById('addButton'));
 addButton.listen('click', () => {

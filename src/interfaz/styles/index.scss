@@ -108,8 +108,8 @@ section {
     padding: 16px;
 }
 
-.my-card__media {
-    //background-image: url();
+.mdc-card__media {
+  background: repeating-linear-gradient( 45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 20px), url(https://via.placeholder.com/100)
 }
 
 .mdc-layout-grid__cell{
