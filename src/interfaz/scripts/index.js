@@ -32,6 +32,7 @@ sistema.cargarSistemaPredet();
 function inicio() {
   document.getElementById("btnAgregarNFT").addEventListener("click", agregarNFT);
   document.getElementById("btnCrearUsuario").addEventListener("click", agregarUsuario);
+  document.getElementById("btnLogin").addEventListener("click", login);
   document.getElementById("btnLogin").addEventListener("click", agregarNFT);
 }
 
@@ -46,18 +47,37 @@ function agregarNFT() {
   let nft = new NFT(titulo, precio, descripcion, categoria, imagen);
 }
 
-function agregarUsuario() {
-  let user = document.getElementById("txtUsuarioCrear").value;
-  let mail = document.getElementById("txtMail").value;
-  let contraseña = document.getElementById("txtPasswordCrear").value;
+function login(){
+  let user = document.getElementById("txtUsuarioLogin").value;
+  let contrasena = document.getElementById("txtPasswordLogin").value;
 
-
-  let usuario = new Usuario(user, mail, contraseña);
-  sistema.addUsuario(usuario);
-
-  document.getElementById("txtUsuarioLogin").value = sistema.getListaUsuarios().length;
-
-  document.getElementById("txtUsuarioCrear").value = "";
-  document.getElementById("txtMail").value = "";
-  document.getElementById("txtPasswordCrear").value = "";
+  document.getElementById("usernameActual").innerHTML = user;
 }
+
+function agregarUsuario() {
+  if(document.getElementById("idCrearUsuario").reportValidity()){
+
+    let user = document.getElementById("txtUsuarioCrear").value;
+    let mail = document.getElementById("txtMail").value;
+    let contraseña = document.getElementById("txtPasswordCrear").value;
+
+
+    let usuario = new Usuario(user, mail, contraseña);
+    sistema.addUsuario(usuario);
+    /*try{
+      sistema.addUsuario(usuario);
+    }
+    catch(Error){
+      window.alert("Ya existe un perfil con ese username");
+    }*/
+    
+    document.getElementById("txtUsuarioLogin").value = sistema.getListaUsuarios().length;
+
+    document.getElementById("txtUsuarioCrear").value = "";
+    document.getElementById("txtMail").value = "";
+    document.getElementById("txtPasswordCrear").value = "";
+    }
+  
+}
+
+

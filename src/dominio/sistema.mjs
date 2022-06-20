@@ -8,6 +8,7 @@ export default class Sistema {
         this.listaUsuarios = [];
     }
 
+
     addNFT(titulo, precio, descripcion, creador, propietario){
         const nftAgregar = new NFT(titulo, precio, descripcion, creador, propietario);
         let existe = this.listaNFTS.some(m => m.titulo == nftAgregar.titulo);
