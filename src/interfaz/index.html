@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
   <link rel="stylesheet" type="text/css" href="styles/index.scss" />
+  <script src="scripts/index.js"></script>
 </head>
 
 <body>
@@ -386,7 +387,7 @@
                 <label class="mdc-text-field mdc-text-field--filled textfieldTitulo">
                   <span class="mdc-text-field__ripple"></span>
                   <span class="mdc-floating-label" id="tagtituloNFT">Titulo NFT</span>
-                  <input class="mdc-text-field__input" type="text" aria-labelledby="tagtituloNFT">
+                  <input id="idTitulo" class="mdc-text-field__input" type="text" aria-labelledby="tagtituloNFT">
                   <span class="mdc-line-ripple"></span>
                 </label>
               </div>
@@ -395,7 +396,7 @@
               <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label textfieldPrecio">
                 <div class="mdc-text-field mdc-text-field--no-label">
                   <div class="mdc-text-field__prefix">$&nbsp;</div>
-                  <input type="text" class="mdc-text-field__input">
+                  <input id="idPrecio" type="text" class="mdc-text-field__input">
                   <div class="mdc-text-field__suffix">.00</div>
                   <div class="mdc-line-ripple"></div>
                 </div>
@@ -435,11 +436,11 @@
                 </div>
               
                 <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-                  <ul class="mdc-list" role="listbox" aria-label="Listbox de categoria">
+                  <ul id="idCategoria" class="mdc-list" role="listbox" aria-label="Listbox de categoria">
                     <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="none" role="option">
                       <span class="mdc-list-item__ripple"></span>
                       <span class="mdc-list-item_text">
-                        Ninguna
+                        Otros
                       </span>
                     </li>
                     <li class="mdc-list-item" aria-selected="false" data-value="musica" role="option">
@@ -479,11 +480,11 @@
               </div>
 
               <form action="/imagenes">
-                <input type="file" id="myFile" name="filename">
+                <input id="imagen" type="file" id="myFile" name="filename">
            <!-- <input type="submit"> -->
               </form>
 
-              <button type="button" class="mdc-button mdc-dialog__button"
+              <button id="btnAgregar" type="button" class="mdc-button mdc-dialog__button"
                       data-mdc-dialog-action="ok">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label agregarNFTAFeed">AGREGAR</span>
