@@ -6,17 +6,6 @@ export class Sistema{
     constructor(){
         this.listaNFTS = [];
         this.listaUsuarios = [];
-        this.listaCategorias = [];
-    }
-
-    addCategoria(nombre){
-        const catAgregar = new Categoria(nombre);
-        let existe = this.listaCategorias.some(m => m.nombreCat == catAgregar.nombre);
-        if (!existe) {
-         this.listaCategorias.push(catAgregar);
-        } else {
-        throw new Error(`Una categoria con ese nombre ya existe.`);
-        }
     }
 
     addNFT(titulo, precio, descripcion, creador, propietario){
@@ -26,6 +15,16 @@ export class Sistema{
          this.listaNFTS.push(nftAgregar);
         } else {
         throw new Error(`Un NFT con ese titulo ya existe.`);
+        }
+    }
+
+    addUsuario(user, mail, contraseña){
+        const usuarioAgregar = new Usuario(user, mail, contraseña);
+        let existe = this.listaUsuarios.some(m => m.usuario == usuarioAgregar.usuario);
+        if (!existe) {
+         this.listaUsuarios.push(usuarioAgregar);
+        } else {
+        throw new Error(`Un perfil con ese usuario ya existe.`);
         }
     }
 
