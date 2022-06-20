@@ -5,8 +5,6 @@ import { MDCTextField } from '@material/textfield';
 import { MDCSelect } from '@material/select';
 import {MDCSnackbar} from '@material/snackbar';
 import Sistema from "../../dominio/sistema.mjs";
-import NFT from '../../dominio/nft.mjs';
-import Usuario from "../../dominio/usuario.mjs";
 
 window.addEventListener("load", inicio);
 
@@ -33,7 +31,6 @@ function inicio() {
   document.getElementById("btnAgregarNFT").addEventListener("click", agregarNFT);
   document.getElementById("btnCrearUsuario").addEventListener("click", agregarUsuario);
   document.getElementById("btnLogin").addEventListener("click", login);
-  document.getElementById("btnLogin").addEventListener("click", agregarNFT);
 }
 
 function agregarNFT() {
@@ -44,34 +41,31 @@ function agregarNFT() {
   let imagen = document.getElementById("idImagen").value;
   //let creador = document.getElementById("idUsuario").value;
 
-  let nft = new NFT(titulo, precio, descripcion, categoria, imagen);
+  //let nft = new NFT(titulo, precio, descripcion, categoria, imagen);
 }
 
 function login(){
   let user = document.getElementById("txtUsuarioLogin").value;
-  let contrasena = document.getElementById("txtPasswordLogin").value;
+  let password = document.getElementById("txtPasswordLogin").value;
 
-  document.getElementById("usernameActual").innerHTML = user;
+  let currentUser = sistema.getUsuarioByUser(user);
+
+  if (currentUser != null && currentUser.getPassword() == password) {
+    document.getElementById("usernameActual").innerHTML = currentUser.getUsername();
+  }
+  
 }
 
 function agregarUsuario() {
   if(document.getElementById("idCrearUsuario").reportValidity()){
-
     let user = document.getElementById("txtUsuarioCrear").value;
     let mail = document.getElementById("txtMail").value;
-    let contraseña = document.getElementById("txtPasswordCrear").value;
+    let password = document.getElementById("txtPasswordCrear").value;
 
-
-    let usuario = new Usuario(user, mail, contraseña);
-    sistema.addUsuario(usuario);
-    /*try{
-      sistema.addUsuario(usuario);
+    //let usuario = new Usuario(user, mail, contraseña);
+    if (sistema.getUsuarioByUser(user) == null) {
+      sistema.addUsuario(user, mail, password);
     }
-    catch(Error){
-      window.alert("Ya existe un perfil con ese username");
-    }*/
-    
-    document.getElementById("txtUsuarioLogin").value = sistema.getListaUsuarios().length;
 
     document.getElementById("txtUsuarioCrear").value = "";
     document.getElementById("txtMail").value = "";

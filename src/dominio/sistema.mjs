@@ -8,25 +8,16 @@ export default class Sistema {
         this.listaUsuarios = [];
     }
 
-
+    //funciones NFT
     addNFT(titulo, precio, descripcion, creador, propietario){
         const nftAgregar = new NFT(titulo, precio, descripcion, creador, propietario);
-        let existe = this.listaNFTS.some(m => m.titulo == nftAgregar.titulo);
-        if (!existe) {
-            this.listaNFTS.push(nftAgregar);
-        } else {
-            throw new Error(`Un NFT con ese titulo ya existe.`);
-        }
+        this.listaNFTS.push(nftAgregar);
     }
 
+    //funciones usuarios
     addUsuario(user, mail, contraseña){
         const usuarioAgregar = new Usuario(user, mail, contraseña);
-        let existe = this.listaUsuarios.some(m => m.user == usuarioAgregar.user);
-        if (!existe) {
-            this.listaUsuarios.push(usuarioAgregar);
-        } else {
-            throw new Error(`Un perfil con ese usuario ya existe.`);
-        }
+        this.listaUsuarios.push(usuarioAgregar);
     }
 
     getListaUsuarios() {
@@ -35,12 +26,14 @@ export default class Sistema {
 
     getUsuarioByUser(user) {
         for (var i=0; i < this.listaUsuarios.length; i++) {
-            if (this.listaNFTS[i].getUsername() == user) {
-                return this.listaNFTS[i];
+            if (this.listaUsuarios[i].getUsername() == user) {
+                return this.listaUsuarios[i];
             }
         }
+        return null;
     }
 
+    //funciones aux
     cargarSistemaPredet(){
         this.addUsuario("moli", "moli@", "prueba");
     }
