@@ -28,6 +28,7 @@ tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
 
 function inicio() {
   document.getElementById("btnAgregar").addEventListener("click", agregarNFT);
+
 }
 
 function agregarNFT() {
@@ -48,6 +49,23 @@ function agregarNFT() {
     document.getElementById("idNombre").value = "";
 		document.getElementById("idDirec").value = "";
 		document.getElementById("idTel").value = "";
+}
+
+function agregarUsuario() {
+  let user = document.getElementById("txtUsuario").value;
+  let mail = document.getElementById("txtMail").value;
+  let contraseña = document.getElementById("txtContraseña").value;
+
+  let usuario = new Usuario(user, mail, contraseña);
+  sistema.addUsuario(usuario);
+  var x = document.getElementById("idDonante");
+  var option = document.createElement("option");
+  option.text = nombre;
+  x.add(option);
+
+  document.getElementById("txtUsuario").value = "";
+  document.getElementById("txtMail").value = "";
+  document.getElementById("txtContraseña").value = "";
 }
 
 
