@@ -10,18 +10,21 @@
 
 <body>
 
+  <!-- header incluyendo titulo y el tab bar-->
   <header class="mdc-top-app-bar">
+
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <span class="mdc-top-app-bar__title">NFTs</span>
       </section>
     </div>
 
+    <!--tab bar-->
     <div class="mdc-tab-bar" role="tablist">
       <div class="mdc-tab-scroller">
         <div class="mdc-tab-scroller__scroll-area">
           <div class="mdc-tab-scroller__scroll-content">
-
+            <!--botones de tab bar-->
             <button class="mdc-tab mdc-tab--active sample-content-tab" role="tab" aria-selected="true" tabindex="0">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__text-label">FEED</span>
@@ -67,94 +70,14 @@
         </div>
       </div>
     </div>
+  
   </header>
 
   <main class="mdc-top-app-bar--fixed-adjust">
 
-    <section class="content">
-      <aside class="mdc-drawer">
-        <header class="mdc-drawer__header">Categorías</header>
-        <div class="mdc-drawer__content">
-          <nav class="mdc-list">
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-1"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-1">Filtro 1</label>
-            </div>
-  
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-2"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-2">Filtro 2</label>
-            </div>
-  
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-3"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-3">Filtro 3</label>
-            </div>
-    
-            <div class="mdc-slider mdc-slider--range">
-              <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" aria-label="Range slider demo">
-              <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" aria-label="Range slider demo">
-              <div class="mdc-slider__track">
-                <div class="mdc-slider__track--inactive"></div>
-                <div class="mdc-slider__track--active">
-                  <div class="mdc-slider__track--active_fill"
-                       style="transform:scaleX(.4); left:30%"></div>
-                </div>
-              </div>
-              <div class="mdc-slider__thumb" style="left:calc(30%-24px)">
-                <div class="mdc-slider__thumb-knob"></div>
-              </div>
-              <div class="mdc-slider__thumb" style="left:calc(70%-24px)">
-                <div class="mdc-slider__thumb-knob"></div>
-              </div>
-            </div>
-    
-          </nav>
-        </div>
-      </aside>
-
+    <!--tab de feed-->
+    <section id = "feedWindow" class="content">
+      <!--grid layout de feed-->
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner wrapper">
           <div class="mdc-layout-grid__cell">
@@ -270,89 +193,8 @@
 
     </section>
 
-    <section class="content sample-content--hidden">
-      <aside class="mdc-drawer">
-        <header class="mdc-drawer__header">Categorías</header>
-        <div class="mdc-drawer__content">
-          <nav class="mdc-list">
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-1"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-1">Filtro 1</label>
-            </div>
-  
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-2"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-2">Filtro 2</label>
-            </div>
-  
-            <div class="mdc-form-field">
-              <div class="mdc-checkbox">
-                <input type="checkbox"
-                       class="mdc-checkbox__native-control"
-                       id="checkbox-3"/>
-                <div class="mdc-checkbox__background">
-                  <svg class="mdc-checkbox__checkmark"
-                       viewBox="0 0 24 24">
-                    <path class="mdc-checkbox__checkmark-path"
-                          fill="none"
-                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                  </svg>
-                  <div class="mdc-checkbox__mixedmark"></div>
-                </div>
-                <div class="mdc-checkbox__ripple"></div>
-              </div>
-              <label for="checkbox-3">Filtro 3</label>
-            </div>
-    
-            <div class="mdc-slider mdc-slider--range">
-              <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" aria-label="Range slider demo">
-              <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" aria-label="Range slider demo">
-              <div class="mdc-slider__track">
-                <div class="mdc-slider__track--inactive"></div>
-                <div class="mdc-slider__track--active">
-                  <div class="mdc-slider__track--active_fill"
-                       style="transform:scaleX(.4); left:30%"></div>
-                </div>
-              </div>
-              <div class="mdc-slider__thumb" style="left:calc(30%-24px)">
-                <div class="mdc-slider__thumb-knob"></div>
-              </div>
-              <div class="mdc-slider__thumb" style="left:calc(70%-24px)">
-                <div class="mdc-slider__thumb-knob"></div>
-              </div>
-            </div>
-    
-          </nav>
-        </div>
-      </aside>
+    <!--tab de favoritos-->
+    <section id="favoritosWindow" class="content sample-content--hidden">
 
       <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner wrapper">
@@ -388,7 +230,8 @@
         </div>
     </section>
 
-    <section id="agregarWindow"class="content sample-content--hidden"> 
+    <!--tab de agregar nft-->
+    <section id="agregarWindow" class="content sample-content--hidden"> 
       <div class="mdc-layout-grid agregar">     
             <div>
               <label class="mdc-text-field mdc-text-field--filled textfieldTitulo">
@@ -490,7 +333,7 @@
               <input id="imagen" type="file" id="myFile" name="filename">
             </form>
 
-            <button id="btnAgregar" type="button" class="mdc-button mdc-dialog__button"
+            <button id="btnAgregarNFT" type="button" class="mdc-button mdc-dialog__button"
                     data-mdc-dialog-action="ok">
               <div class="mdc-button__ripple"></div>
               <span class="mdc-button__label agregarNFTAFeed">AGREGAR</span>
@@ -498,77 +341,88 @@
 
     </section>
 
+    <!--tab de perfil-->
     <section id="loginWindow" class="content sample-content--hidden"> 
+
+      <!--div de seccion login-->
       <div class="mdc-layout-grid login">     
         <form id="idLogin">
-        <h1>Login</h1>
-        <div>
-          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtUsuario">
-            <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input required type="text" class="mdc-text-field__input" placeholder="Usuario" aria-labelledby="Usuario">
-          </label>
-        </div>
+          <h1>Login</h1>
+          <!--div de texto usuario-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtUsuarioLogin" required type="text" class="mdc-text-field__input" placeholder="usuario">
+            </label>
+          </div>
 
-        <div>
-          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
-            <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input required type="password" class="mdc-text-field__input" placeholder="contraseña" aria-labelledby="contraseña">
-          </label>
-        </div>
+          <!--div de texto contrasena-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPasswordLogin" required type="password" class="mdc-text-field__input" placeholder="contraseña">
+            </label>
+          </div>
 
-        <button id="btnAgregar" type="button" class="mdc-button mdc-dialog__button"
-                data-mdc-dialog-action="ok">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label agregarNFTAFeed">Login</span>
-        </button>  
-      </form>
+          <!--div de boton login-->
+          <button id="btnLogin" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Login</span>
+          </button>  
+        </form>
       </div>  
 
-      <div class="mdc-layout-grid crearUsuario">     
+      <!--div de seccion crear usuario-->
+      <div class="mdc-layout-grid">     
         <h1>Crear Usuario</h1>
         <form id="idCrearUsuario">
-        <div>
-          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtUsuario">
-            <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input required type="text" class="mdc-text-field__input" placeholder="Usuario" aria-labelledby="Usuario">
-          </label>
-        </div>
+          <!--div de texto usuario-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtUsuario">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtUsuarioCrear" required type="text" class="mdc-text-field__input" placeholder="usuario" aria-labelledby="usuario"></input>
+            </label>
+          </div>
 
-        <div>
-          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtMail">
-            <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input required type="text" class="mdc-text-field__input" placeholder="mail" aria-labelledby="mail">
-          </label>
-        </div>
+          <!--div de texto mail-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtMail">
+              <span class="mdc-notched-outline">
+              <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtMail" required type="text" class="mdc-text-field__input" placeholder="mail" aria-labelledby="mail">
+            </label>
+          </div>
 
-        <div>
-          <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
-            <span class="mdc-notched-outline">
-            <span class="mdc-notched-outline__leading"></span>
-              <span class="mdc-notched-outline__trailing"></span>
-            </span>
-            <input required type="text" class="mdc-text-field__input" placeholder="contraseña" aria-labelledby="contraseña">
-          </label>
-        </div>
+          <!--div de texto contrasena-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPasswordCrear" required type="text" class="mdc-text-field__input" placeholder="contraseña" aria-labelledby="contraseña">
+            </label>
+          </div>
 
-        <button id="btnAgregar" type="button" class="mdc-button mdc-dialog__button"
-                data-mdc-dialog-action="ok">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label agregarNFTAFeed">CREAR</span>
-        </button>  
-      </form>
+          <!--div de boton-->
+          <button id="btnCrearUsuario" type="button" class="mdc-button mdc-dialog__button"
+                  data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label agregarNFTAFeed">CREAR</span>
+          </button>  
+
+        </form>
       </div>  
     </section>
   </main>

@@ -1,7 +1,5 @@
 export default class usuario {
-
     /**
-     * Creates a new user 
      * @param {string} user 
      * @param {string} mail 
      * @param {string} contraseña  
@@ -10,5 +8,17 @@ export default class usuario {
       this.user = user;
       this.mail = mail;
       this.contraseña = contraseña;
+    }
+
+    getUsername() {
+        return this.user;
+    }
+
+    getMail() {
+        return this.mail;
+    }
+
+    getPassword() {
+        return this.contraseña;
     }
   }

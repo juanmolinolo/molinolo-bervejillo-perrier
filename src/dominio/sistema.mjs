@@ -1,9 +1,9 @@
-import Categoria from "./categoria.mjs";
+import NFT from "./nft.mjs"
+import Usuario from "./usuario.mjs"
 
-export class Sistema{
+export default class Sistema {
 
-    //crea nuevo sistema
-    constructor(){
+    constructor() {
         this.listaNFTS = [];
         this.listaUsuarios = [];
     }
@@ -12,31 +12,37 @@ export class Sistema{
         const nftAgregar = new NFT(titulo, precio, descripcion, creador, propietario);
         let existe = this.listaNFTS.some(m => m.titulo == nftAgregar.titulo);
         if (!existe) {
-         this.listaNFTS.push(nftAgregar);
+            this.listaNFTS.push(nftAgregar);
         } else {
-        throw new Error(`Un NFT con ese titulo ya existe.`);
+            throw new Error(`Un NFT con ese titulo ya existe.`);
         }
     }
 
     addUsuario(user, mail, contraseña){
         const usuarioAgregar = new Usuario(user, mail, contraseña);
-        let existe = this.listaUsuarios.some(m => m.usuario == usuarioAgregar.usuario);
+        let existe = this.listaUsuarios.some(m => m.user == usuarioAgregar.user);
         if (!existe) {
-         this.listaUsuarios.push(usuarioAgregar);
+            this.listaUsuarios.push(usuarioAgregar);
         } else {
-        throw new Error(`Un perfil con ese usuario ya existe.`);
+            throw new Error(`Un perfil con ese usuario ya existe.`);
         }
     }
 
+    getUsuarioByUser(user) {
+        for (var i=0; i < this.listaUsuarios.length; i++) {
+            if (this.listaNFTS[i].getUsername() == user) {
+                return this.listaNFTS[i];
+            }
+        }
+    }
+    
+    /*
     cargarSistemaPredet(){
-        this.addCategoria("Musica");
-        this.addCategoria("Fotografia");
-        this.addCategoria("Ilustraciones");
-
         this.addNFT("Verano", 200, "El verano azul", "Milagros", "Perri");
         this.addNFT("Punta del este", 400, "Un maravilloso paisaje", "JuanXD", "Perri");
         this.addNFT("Criaturas I", 700, "Creaciones de la coleccion Criaturas", "Perri", "JuanXD");
         this.addNFT("Criaturas II", 750, "Creaciones de la coleccion Criaturas", "Perri", "JuanMoli");
-
     }
+    */
 }
+
