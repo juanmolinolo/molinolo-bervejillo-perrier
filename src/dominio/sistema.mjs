@@ -28,6 +28,10 @@ export default class Sistema {
         }
     }
 
+    getListaUsuarios() {
+        return this.listaUsuarios;
+    }
+
     getUsuarioByUser(user) {
         for (var i=0; i < this.listaUsuarios.length; i++) {
             if (this.listaNFTS[i].getUsername() == user) {
@@ -35,14 +39,9 @@ export default class Sistema {
             }
         }
     }
-    
-    /*
+
     cargarSistemaPredet(){
-        this.addNFT("Verano", 200, "El verano azul", "Milagros", "Perri");
-        this.addNFT("Punta del este", 400, "Un maravilloso paisaje", "JuanXD", "Perri");
-        this.addNFT("Criaturas I", 700, "Creaciones de la coleccion Criaturas", "Perri", "JuanXD");
-        this.addNFT("Criaturas II", 750, "Creaciones de la coleccion Criaturas", "Perri", "JuanMoli");
+        this.addUsuario("moli", "moli@", "prueba");
     }
-    */
 }
 
