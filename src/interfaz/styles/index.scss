@@ -109,7 +109,7 @@ section {
 }
 
 .my-card__media {
-    background-color: rgb(32, 32, 32);
+    //background-image: url();
 }
 
 .mdc-layout-grid__cell{
@@ -117,8 +117,9 @@ section {
 }
 
 .my-card {
-   height: 350px;
-    width: 350px;
+  height: 350px;
+  width: 350px;
+  border-radius: 5px;
 }
 
 .mdc-top-app-bar--fixed-adjust{
@@ -155,3 +156,8 @@ section {
 .textfieldPrecio{
     width: 300px;
 }
+
+.agregarWindow{
+  display: block;
+}
+
