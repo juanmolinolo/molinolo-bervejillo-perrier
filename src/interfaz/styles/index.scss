@@ -21,11 +21,17 @@
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
+@use '@material/select';
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
 @use "@material/checkbox";
 @use "@material/form-field";
+@use "@material/dialog";
+@use "@material/fab";
 
+
+@include fab.core-styles;
+@include dialog.core-styles;
 @include checkbox.core-styles;
 @include form-field.core-styles;
 @include card.core-styles;
@@ -86,6 +92,13 @@ section {
   color: #ab67ff;
 }
 
+.botonAgregarNFT{
+    position: fixed;
+    right: 15px; 
+    bottom: 25px;
+    z-index: 1;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -96,7 +109,7 @@ section {
 }
 
 .my-card__media {
-    background-color: rgb(32, 32, 32);
+    //background-image: url();
 }
 
 .mdc-layout-grid__cell{
@@ -104,8 +117,9 @@ section {
 }
 
 .my-card {
-   height: 350px;
-    width: 350px;
+  height: 350px;
+  width: 350px;
+  border-radius: 5px;
 }
 
 .mdc-top-app-bar--fixed-adjust{
@@ -129,3 +143,21 @@ section {
   overflow: auto;
   z-index: 0;
 }
+
+.selector-width-class {
+    width: 300px;
+    z-index: 1;
+}
+
+.textfieldTitulo{
+    width: 300px;
+}
+
+.textfieldPrecio{
+    width: 300px;
+}
+
+.agregarWindow{
+  display: block;
+}
+

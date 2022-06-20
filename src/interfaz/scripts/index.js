@@ -6,11 +6,14 @@ import { MDCSelect } from '@material/select';
 import {MDCSnackbar} from '@material/snackbar';
 import listaNFTs from '../../dominio/listaNFTs.mjs';
 import NFT from '../../dominio/nft.mjs';
+import Sistema from '../../dominio/sistema.mjs';
+
 
 const listaNFT = new listaNFTs();
 
 const topAppBarElement = document.querySelector('.mdc-top-app-bar');
 const topAppBar = new MDCTopAppBar(topAppBarElement);
+const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 
 const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
 tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
@@ -22,6 +25,48 @@ tabBar.listen("MDCTabBar:activated", (activatedEvent) => {
     }
   });
 });
+
+function inicio() {
+  document.getElementById("btnAgregar").addEventListener("click", agregarNFT);
+}
+
+function agregarNFT() {
+    let titulo = document.getElementById("idTitulo").value;
+    let precio = document.getElementById("idPrecio").value;
+    let descripcion = document.getElementById("idDescripcion").value;
+    let categoria = document.getElementById("idCategoria").value;
+    let imagen = document.getElementById("idImagen").value;
+    //let creador = document.getElementById("idUsuario").value;
+
+    let nft = new NFT(titulo, precio, descripcion, categoria, imagen);
+    sistema.agregarDonante(donante);
+    var x = document.getElementById("idDonante");
+    var option = document.createElement("option");
+    option.text = nombre;
+    x.add(option);
+
+    document.getElementById("idNombre").value = "";
+		document.getElementById("idDirec").value = "";
+		document.getElementById("idTel").value = "";
+}
+
+
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+
+/*
+El index se obtiene: ${select.selectedIndex} 
+Y el value: "${select.value}"
+*/
+
+dialog.listen('MDCDialog:opened', function() {
+  // Assuming contentElement references a common parent element with the rest of the page's content
+  contentElement.setAttribute('aria-hidden', 'true');
+});
+
+dialog.listen('MDCDialog:closing', function() {
+  contentElement.removeAttribute('aria-hidden');
+});
+
 
 const textFieldTitle = new MDCTextField(document.getElementById('title'));
 const textFieldYear = new MDCTextField(document.getElementById('year'));
