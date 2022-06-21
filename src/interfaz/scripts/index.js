@@ -1,9 +1,10 @@
-import { MDCRipple } from '@material/ripple';
+/* eslint-disable linebreak-style */
 import { MDCTopAppBar } from '@material/top-app-bar';
 import { MDCTabBar } from '@material/tab-bar';
 import { MDCTextField } from '@material/textfield';
 import { MDCSelect } from '@material/select';
 import {MDCSnackbar} from '@material/snackbar';
+
 import Sistema from "../../dominio/sistema.mjs";
 
 window.addEventListener("load", inicio);
@@ -33,12 +34,26 @@ function inicio() {
   document.getElementById("btnLogin").addEventListener("click", login);
 }
 
+function mostrarCartas(nombreLista, nft) {
+  //<div class="mdc-card my-card">
+  const lista = document.getElementById(nombreLista);
+  const divCarta = document.createElement('div');
+  divCarta.className = "mdc-card my-card";
+  lista.appendChild(divCarta);
+
+  const img = document.createElement('img');
+  img.className = "mdc-image-list__image";
+  img.src = nft.getPath();
+}
+
 function agregarNFT() {
   let titulo = document.getElementById("idTitulo").value;
   let precio = document.getElementById("idPrecio").value;
   let descripcion = document.getElementById("idDescripcion").value;
   let categoria = document.getElementById("idCategoria").value;
   let imagen = document.getElementById("idImagen").value;
+
+  
   //let creador = document.getElementById("idUsuario").value;
 
   //let nft = new NFT(titulo, precio, descripcion, categoria, imagen);

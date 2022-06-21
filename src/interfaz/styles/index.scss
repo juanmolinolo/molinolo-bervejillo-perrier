@@ -28,6 +28,8 @@
 @use "@material/form-field";
 @use "@material/dialog";
 @use "@material/fab";
+@use "@material/image-list/mdc-image-list";
+@use "@material/image-list";
 
 
 @include fab.core-styles;
@@ -52,6 +54,19 @@ body {
   position: absolute;
 }
 
+//estilo de cartas
+.my-image-list {
+  @include image-list.standard-columns(3);
+}
+
+.mdc-image-list__item{
+  padding: 20px;
+}
+
+#lista_nfts {
+  display: inline;
+}
+//
 .mdc-top-app-bar {
   z-index: 7;
   @include icon-button.core-styles;
