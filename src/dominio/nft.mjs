@@ -8,15 +8,15 @@ export default class NFT {
      * @param {int} precio
      * @param {string} descripcion
      * @param {string} creador
-     * @param {string} propietario
+     * @param {string} categoria
      * @param {string} pathImg
      */
-  constructor(titulo, precio, descripcion, creador, propietario, pathImg) {
+  constructor(titulo, precio, descripcion, creador, categoria, pathImg) {
     this.titulo = titulo;
     this.precio = precio;
     this.descripcion = descripcion;
     this.creador = creador;
-    this.propietario = propietario;
+    this.categoria = categoria;
     this.pathImg = pathImg;
   }
 
@@ -25,5 +25,12 @@ export default class NFT {
    */
   getPath() {
     return this.pathImg;
+  }
+
+  /** retorna el titulo de la imagen
+   * @return {string}
+   */
+  getTitulo() {
+    return this.titulo;
   }
 }

@@ -7,11 +7,13 @@ export default class usuario {
      * @param {string} user
      * @param {string} mail
      * @param {string} contraseña
+     * @param {array} favoritos
      */
-  constructor(user, mail, contraseña) {
+  constructor(user, mail, contraseña, favoritos) {
     this.user = user;
     this.mail = mail;
     this.contraseña = contraseña;
+    this.favoritos = favoritos;
   }
 
   /** retorna el nombre de usuario
@@ -33,5 +35,12 @@ export default class usuario {
    */
   getPassword() {
     return this.contraseña;
+  }
+
+  /** retorna la lista favoritos del usuario
+   * @return {array}
+   */
+  getListaFavs() {
+    return this.favoritos;
   }
 }

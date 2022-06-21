@@ -5,7 +5,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
   <link rel="stylesheet" type="text/css" href="styles/index.scss" />
-  <script src="scripts/index.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,6 +21,7 @@
         <span class="mdc-top-app-bar__title">NFTs</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <!--label conteniendo username actual-->
         <span class="mdc-top-app-bar__title" id="usernameActual"></span>
       </section>
     </div>
@@ -83,7 +87,6 @@
       <!--grid layout de feed-->
       <div id="lista_nfts">
         <ul class="mdc-image-list my-image-list" id="lista_nfts_interna"> 
-
           <!--Cargado dinamicamente desde JS--> 
         </ul>
       </div>
@@ -92,149 +95,106 @@
 
     <!--tab de favoritos-->
     <section id="favoritosWindow" class="content sample-content--hidden">
-
-      <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner wrapper">
-          <div class="mdc-layout-grid__cell">
-            
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square my-card__media">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-                <div class="mdc-card__actions">
-                  <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-card__action mdc-card__action--button">
-                      <div class="mdc-button__ripple"></div>
-                      <span class="mdc-button__label">Comprar</span>
-                    </button>
-                    <button class="mdc-button mdc-card__action mdc-card__action--button">
-                      <div class="mdc-button__ripple"></div>
-                      <span class="mdc-button__label">Descripción</span>
-                    </button>
-                  </div>
-                  <div class="mdc-card__action-icons">
-                    <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="favorite">favorite</button>
-                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!--grid layout de favs-->
+      <div id="lista_nfts_favs">
+        <ul class="mdc-image-list my-image-list" id="lista_nfts_interna_favs"> 
+          <!--Cargado dinamicamente desde JS--> 
+        </ul>
+      </div>
+      
     </section>
 
     <!--tab de agregar nft-->
     <section id="agregarWindow" class="content sample-content--hidden"> 
-      <div class="mdc-layout-grid agregar">     
-            <div>
-              <label class="mdc-text-field mdc-text-field--filled textfieldTitulo">
-                <span class="mdc-text-field__ripple"></span>
-                <span class="mdc-floating-label" id="tagtituloNFT">Titulo NFT</span>
-                <input id="idTitulo" class="mdc-text-field__input" type="text" aria-labelledby="tagtituloNFT">
-                <span class="mdc-line-ripple"></span>
-              </label>
-            </div>
-            
-            
-            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label textfieldPrecio">
-              <div class="mdc-text-field mdc-text-field--no-label">
-                <div class="mdc-text-field__prefix">$&nbsp;</div>
-                <input id="idPrecio" type="text" class="mdc-text-field__input">
-                <div class="mdc-text-field__suffix">.00</div>
-                <div class="mdc-line-ripple"></div>
-              </div>
-            </div>
+      <div id="camposAgregar">
+        <form id="idAgregarNFT">
+          <!--div agregarTitulo-->
+          <div id="agregarTitulo">
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtAgregar" required type="text"  class="mdc-text-field__input" placeholder="titulo" required>
+            </label>
+          </div>
 
-            <div class="mdc-select mdc-select--filled selector-width-class mdc-select--required">
-              <div class="mdc-select__anchor"
-                    role="button"
-                    aria-haspopup="listbox"
-                    aria-required = "true";
-                    aria-expanded="false"
-                    aria-labelledby="demo-label demo-selected-text">
-                <span class="mdc-select__ripple"></span>
-                <span id="demo-label" class="mdc-floating-label">Elegir categoria</span>
-                <span class="mdc-select__selected-text-container">
-                  <span id="demo-selected-text" class="mdc-select__selected-text"></span>
-                </span>
-                <span class="mdc-select__dropdown-icon">
-                  <svg
-                      class="mdc-select__dropdown-icon-graphic"
-                      viewBox="7 10 10 5" focusable="false">
-                    <polygon
-                        class="mdc-select__dropdown-icon-inactive"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 10 12 15 17 10">
-                    </polygon>
-                    <polygon
-                        class="mdc-select__dropdown-icon-active"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 15 12 10 17 15">
-                    </polygon>
-                  </svg>
-                </span>
-                <span class="mdc-line-ripple"></span>
-              </div>
-            
-              <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-                <ul id="idCategoria" class="mdc-list" role="listbox" aria-label="Listbox de categoria">
-                  <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value="none" role="option">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item_text">
-                      Otros
-                    </span>
-                  </li>
-                  <li class="mdc-list-item" aria-selected="false" data-value="musica" role="option">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">
-                      Musica
-                    </span>
-                  </li>
-                  <li class="mdc-list-item" aria-selected="false" data-value="fotografia" aria-disabled="true" role="option">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">
-                      Fotografia
-                    </span>
-                  </li>
-                  <li class="mdc-list-item" aria-selected="false" data-value="ilustraciones" role="option">
-                    <span class="mdc-list-item__ripple"></span>
-                    <span class="mdc-list-item__text">
-                      Ilustraciones
-                    </span>
-                  </li>
-                </ul>
-              </div>
+          <!--div agregarPrecio-->
+          <div id="agregarPrecio">
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPrecio" required type="number"  class="mdc-text-field__input" placeholder="precio" required>
+            </label>
+          </div>
+
+          <!--div comboBox-->
+          <div class="mdc-select mdc-select--filled selector-width-class mdc-select--required">
+            <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-required = "true" aria-expanded="false" aria-labelledby="demo-label demo-selected-text">
+              <span class="mdc-select__ripple"></span>
+              <span id="demo-label" class="mdc-floating-label">Elegir categoria</span>
+              <span class="mdc-select__selected-text-container">
+                <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+              </span>
+              <span class="mdc-select__dropdown-icon">
+                <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+                  <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                  <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                </svg>
+              </span>
+              <span class="mdc-line-ripple"></span>
             </div>
 
-
-            <div>
-              <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label textareaDescripcion">
-                <span class="mdc-notched-outline">
-                  <span class="mdc-notched-outline__leading"></span>
-                  <span class="mdc-notched-outline__trailing"></span>
-                </span>
-                <span class="mdc-text-field__resizer">
-                  <span class="mdc-floating-label" id="tagDescripcion">Descripcion</span>
-                  <textarea class="mdc-text-field__input" rows="6" cols="35" aria-label="Label"></textarea>
-                </span>
-              </label>
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+              <ul id="idCategoria" class="mdc-list" role="listbox" aria-label="Listbox de categoria">
+                <li class="mdc-list-item" aria-selected="false" data-value="otros" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Otros</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="musica" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Musica</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fotografia" aria-disabled="true" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Fotografia</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="ilustraciones" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Ilustraciones</span>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <form action="/imagenes">
-              <input id="imagen" type="file" id="myFile" name="filename">
-            </form>
+          <!--div agregarDescripcion-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label textareaDescripcion">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <span class="mdc-text-field__resizer">
+                <textarea class="mdc-text-field__input" id="txtDescripcion" rows="6" cols="35" aria-label="Label" placeholder="descripcion"></textarea>
+              </span>
+            </label>
+          </div>
+        </form>
+        
+        <!--importar fotos-->
+        <form action="/imagenes">
+          <input id="imagen" type="file">
+        </form>
 
-            <button id="btnAgregarNFT" type="button" class="mdc-button mdc-dialog__button"
-                    data-mdc-dialog-action="ok">
-              <div class="mdc-button__ripple"></div>
-              <span class="mdc-button__label agregarNFTAFeed">AGREGAR</span>
-            </button>
+        <!--boton agregarNFT-->
+        <button id="btnAgregarNFT" type="button" class="mdc-button mdc-dialog__button"
+                data-mdc-dialog-action="ok">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label agregarNFTAFeed">AGREGAR</span>
+        </button>
+      </div>
 
     </section>
 
@@ -313,11 +273,10 @@
           </div>
 
           <!--div de boton-->
-          <button id="btnCrearUsuario" type="button" class="mdc-button mdc-dialog__button"
-                  data-mdc-dialog-action="ok">
+          <button id="btnCrearUsuario" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="ok">
             <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label agregarNFTAFeed">CREAR</span>
-          </button>  
+            <span class="mdc-button__label">CREAR</span>
+          </button>
 
         </form>
       </div>  

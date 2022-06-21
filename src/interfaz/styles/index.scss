@@ -1,8 +1,9 @@
 @use "@material/theme" with (
-  $primary: #7744ef,
+  $primary: hsl(258, 84%, 60%),
   $secondary: #3685f4,
   $background: #c7c7c7,
 );
+
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/drawer";
@@ -31,7 +32,6 @@
 @use "@material/image-list/mdc-image-list";
 @use "@material/image-list";
 
-
 @include fab.core-styles;
 @include dialog.core-styles;
 @include checkbox.core-styles;
@@ -39,14 +39,12 @@
 @include card.core-styles;
 @include textfield.core-styles;
 
-
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0px auto;
 }
 
@@ -55,13 +53,19 @@ body {
 }
 
 //estilo de cartas
-.my-image-list {
-  @include image-list.standard-columns(3);
+.my-card {
+  height: 25%;
+  width: 25%;
+  border-radius: 5px;
 }
 
-.mdc-image-list__item{
-  padding: 20px;
-}
+// .mdc-image-list my-image-list {
+//   padding:20%;
+// }
+
+// .mdc-image-list__item{
+//   padding: 20px;
+// }
 
 #lista_nfts {
   display: inline;
@@ -74,6 +78,7 @@ body {
 
 section {
   text-align: center;
+  position: relative;
 }
 
 .content {
@@ -99,9 +104,9 @@ section {
     margin: 1rem auto;
 }
 
-.button {
-  margin-top: 1rem;
-}
+// .button {
+//   margin-top: 1rem;
+// }
 
 .mdc-snackbar__actions .mdc-button__label {
   color: #ab67ff;
@@ -116,34 +121,12 @@ section {
     padding: 16px;
 }
 
-.mdc-card__media {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Rubiks_cube_by_keqs.jpg/480px-Rubiks_cube_by_keqs.jpg);
-}
-
 .mdc-layout-grid__cell{
     padding: 20px;
 }
 
-.my-card {
-  height: 350px;
-  width: 350px;
-  border-radius: 5px;
-}
-
 .mdc-top-app-bar--fixed-adjust{
   display: flex;
-}
-
-.mdc-drawer{
-  margin: 5rem auto;
-  padding-bottom: 20rem;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.mdc-drawer__header{
-  text-align: center;
-  margin: 5px auto;
 }
 
 .mdc-layout-grid{

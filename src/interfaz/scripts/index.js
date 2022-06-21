@@ -1,11 +1,22 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import {MDCTabBar} from '@material/tab-bar';
-import NFT from '../../dominio/nft.mjs';
+import {MDCSelect} from '@material/select';
 import Sistema from '../../dominio/sistema.mjs';
 
 window.addEventListener('load', inicio);
+const sistema = new Sistema();
+sistema.cargarSistemaPredet();
 
+/** codigo funcional del dropdown categoria
+ */
+const select = new MDCSelect(document.querySelector('.mdc-select'));
+select.listen('MDCSelect:change', () => {
+  alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
+});
+
+/** codigo funcional de los tabs
+ */
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
   document.querySelectorAll('.content').forEach((element, index) => {
@@ -17,15 +28,23 @@ tabBar.listen('MDCTabBar:activated', (activatedEvent) => {
   });
 });
 
-const sistema = new Sistema();
-sistema.cargarSistemaPredet();
-/**
+/** crea los event listeners necesarios y carga las cards
  */
 function inicio() {
   document.getElementById('btnAgregarNFT').addEventListener('click', agregarNFT);
   document.getElementById('btnCrearUsuario').addEventListener('click', agregarUsuario);
   document.getElementById('btnLogin').addEventListener('click', login);
-  mostrarCartas('lista_nfts_interna', (new NFT('juan', 500, 'prueba', 'juan', 'juan', '../imagenes/prueba.jpeg')));
+  actualizaFeeds();
+}
+
+/** actualiza los feeds
+ */
+function actualizaFeeds() {
+  document.getElementById('lista_nfts_interna').innerHTML = '';
+  document.getElementById('lista_nfts_interna_favs').innerHTML = '';
+  for (let i=0; i<sistema.getListaNFTs().length; i++) {
+    mostrarCartas('lista_nfts_interna', sistema.getListaNFTs()[i]);
+  }
 }
 
 /** muestra la carta del NFT parametro
@@ -107,23 +126,38 @@ function mostrarCartas(nombreLista, nft) {
   const buttonFav = document.createElement('button');
   buttonFav.className = 'material-icons mdc-icon-button mdc-card__action mdc-card__action--icon';
   buttonFav.title = 'favorite';
-  buttonFax.innerText = 'favorite';
+  buttonFav.innerText = 'favorite';
   divAction2.appendChild(buttonFav);
 }
 
 /** agrega el NFT
  */
 function agregarNFT() {
-  const titulo = document.getElementById('idTitulo').value;
-  const precio = document.getElementById('idPrecio').value;
-  const descripcion = document.getElementById('idDescripcion').value;
-  const categoria = document.getElementById('idCategoria').value;
-  const imagen = document.getElementById('idImagen').value;
+  if (document.getElementById('idAgregarNFT').reportValidity()) {
+    const tit = document.getElementById('txtAgregar').value;
+    const prec = document.getElementById('txtPrecio').value;
+    const desc = document.getElementById('txtDescripcion').value;
+    const cat = select.value;
+    const cread = document.getElementById('usernameActual').value;
+    const fakepath = document.getElementById('imagen').value;
+    const path = '../imagenes/' + (fakepath.substring(12, fakepath.length));
 
-
-  // let creador = document.getElementById("idUsuario").value;
-
-  // let nft = new NFT(titulo, precio, descripcion, categoria, imagen);
+    if (sistema.getNFTByTitulo(tit) == null && sistema.getNFTByPath(path) == null) {
+      sistema.addNFT(tit, prec, desc, cread, cat, path);
+      document.getElementById('txtAgregar').value = '';
+      document.getElementById('txtPrecio').value = '';
+      document.getElementById('txtDescripcion').value = '';
+      console.log(path);
+      actualizaFeeds();
+    } else {
+      if (sistema.getNFTByTitulo(tit) != null) {
+        alert('Ya existe un NFT con ese titulo. Intente otro titulo.');
+      }
+      if (sistema.getNFTByPath(path) != null) {
+        alert('Ya existe un NFT con ese nombre de archivo. Intente otro.');
+      }
+    }
+  }
 }
 
 /** logea el usuario
@@ -136,8 +170,11 @@ function login() {
 
   if (currentUser != null && currentUser.getPassword() == password) {
     document.getElementById('usernameActual').innerHTML = currentUser.getUsername();
+  } else {
+    alert('El usuario o contraseña son incorrectos. Intente nuevamente.');
   }
 }
+
 /** agrega el usuario
  */
 function agregarUsuario() {
@@ -145,14 +182,16 @@ function agregarUsuario() {
     const user = document.getElementById('txtUsuarioCrear').value;
     const mail = document.getElementById('txtMail').value;
     const password = document.getElementById('txtPasswordCrear').value;
+    const listaFavs = [];
 
-    // let usuario = new Usuario(user, mail, contraseña);
     if (sistema.getUsuarioByUser(user) == null) {
-      sistema.addUsuario(user, mail, password);
+      sistema.addUsuario(user, mail, password, listaFavs);
+      document.getElementById('txtUsuarioCrear').value = '';
+      document.getElementById('txtMail').value = '';
+      document.getElementById('txtPasswordCrear').value = '';
+      alert('El usuario ha sido agregado correctamente.');
+    } else {
+      alert('Ya existe un usuario con ese nombre. Intente con uno diferente.');
     }
-
-    document.getElementById('txtUsuarioCrear').value = '';
-    document.getElementById('txtMail').value = '';
-    document.getElementById('txtPasswordCrear').value = '';
   }
 }
