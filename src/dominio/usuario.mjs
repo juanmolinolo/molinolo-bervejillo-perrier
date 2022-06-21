@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-/** Constructor de usuario
+/** Constructor de clase Usuario
  * @constructor
  */
 export default class usuario {
@@ -13,18 +13,21 @@ export default class usuario {
     this.mail = mail;
     this.contraseña = contraseña;
   }
+
   /** retorna el nombre de usuario
    * @return {string}
    */
   getUsername() {
     return this.user;
   }
+
   /** retorna el mail de usuario
    * @return {string}
    */
   getMail() {
     return this.mail;
   }
+
   /** retorna la contrasena del usuario
    * @return {string}
    */
