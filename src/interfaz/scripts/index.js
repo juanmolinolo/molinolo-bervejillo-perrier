@@ -11,9 +11,7 @@ sistema.cargarSistemaPredet();
 /** codigo funcional del dropdown categoria
  */
 const select = new MDCSelect(document.querySelector('.mdc-select'));
-select.listen('MDCSelect:change', () => {
-  alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
-});
+select.listen('MDCSelect:change', () => {});
 
 /** codigo funcional de los tabs
  */
@@ -35,6 +33,24 @@ function inicio() {
   document.getElementById('btnCrearUsuario').addEventListener('click', agregarUsuario);
   document.getElementById('btnLogin').addEventListener('click', login);
   actualizaFeeds();
+  creaActionListeners();
+}
+
+/**
+ */
+function creaActionListeners() {
+  for (let i=0; i<sistema.getListaNFTs().length; i++) {
+    const nft = sistema.getListaNFTs()[i];
+    document.getElementById('btnDatos' + nft.getTitulo()).addEventListener('click', function() {
+      funcionAlert(nft);
+    });
+  }
+  for (let i=0; i<sistema.getListaNFTs().length; i++) {
+    const nft = sistema.getListaNFTs()[i];
+    document.getElementById('btnFav' + nft.getTitulo()).addEventListener('click', function() {
+      agregaNFTFavoritos(nft);
+    });
+  }
 }
 
 /** actualiza los feeds
@@ -45,6 +61,16 @@ function actualizaFeeds() {
   for (let i=0; i<sistema.getListaNFTs().length; i++) {
     mostrarCartas('lista_nfts_interna', sistema.getListaNFTs()[i]);
   }
+
+  const curr = document.getElementById('usernameActual').innerHTML;
+  if (curr != null) {
+    const user = sistema.getUsuarioByUser(curr);
+    if (user != null) {
+      for (let i = 0; i < user.getListaFavs().length; i++) {
+        mostrarCartas('lista_nfts_interna_favs', user.getListaFavs()[i]);
+      }
+    }
+  }
 }
 
 /** muestra la carta del NFT parametro
@@ -54,7 +80,6 @@ function actualizaFeeds() {
 function mostrarCartas(nombreLista, nft) {
   // accedo a la lista principal
   const lista = document.getElementById(nombreLista);
-
   // <div class="mdc-card my-card">
   const divCarta = document.createElement('div');
   divCarta.className = 'mdc-card my-card';
@@ -104,6 +129,8 @@ function mostrarCartas(nombreLista, nft) {
   // <button class="mdc-button mdc-card__action mdc-card__action--button">
   const button1 = document.createElement('button');
   button1.className = 'mdc-button mdc-card__action mdc-card__action--button';
+  button1.id = 'btnDatos' + nft.getTitulo();
+  button1.name = nft.getTitulo();
   divActionButtons.appendChild(button1);
 
   // <div class="mdc-button__ripple">
@@ -122,10 +149,10 @@ function mostrarCartas(nombreLista, nft) {
   icon.className = 'mdc-card__action-icons';
   divAction2.appendChild(icon);
 
-  // <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="favorite">favorite
+  // <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon">favorite
   const buttonFav = document.createElement('button');
   buttonFav.className = 'material-icons mdc-icon-button mdc-card__action mdc-card__action--icon';
-  buttonFav.title = 'favorite';
+  buttonFav.id = 'btnFav' + nft.getTitulo();
   buttonFav.innerText = 'favorite';
   divAction2.appendChild(buttonFav);
 }
@@ -138,40 +165,31 @@ function agregarNFT() {
     const prec = document.getElementById('txtPrecio').value;
     const desc = document.getElementById('txtDescripcion').value;
     const cat = select.value;
-    const cread = document.getElementById('usernameActual').value;
+    const cread = document.getElementById('usernameActual').innerHTML;
+    console.log(cread);
     const fakepath = document.getElementById('imagen').value;
     const path = '../imagenes/' + (fakepath.substring(12, fakepath.length));
 
-    if (sistema.getNFTByTitulo(tit) == null && sistema.getNFTByPath(path) == null) {
-      sistema.addNFT(tit, prec, desc, cread, cat, path);
-      document.getElementById('txtAgregar').value = '';
-      document.getElementById('txtPrecio').value = '';
-      document.getElementById('txtDescripcion').value = '';
-      console.log(path);
-      actualizaFeeds();
+    if (cread != null) {
+      if (sistema.getNFTByTitulo(tit) == null && sistema.getNFTByPath(path) == null) {
+        sistema.addNFT(tit, prec, desc, cread, cat, path);
+        document.getElementById('txtAgregar').value = '';
+        document.getElementById('txtPrecio').value = '';
+        document.getElementById('txtDescripcion').value = '';
+        console.log(path);
+        actualizaFeeds();
+        creaActionListeners();
+      } else {
+        if (sistema.getNFTByTitulo(tit) != null) {
+          alert('Ya existe un NFT con ese titulo. Intente otro titulo.');
+        }
+        if (sistema.getNFTByPath(path) != null) {
+          alert('Ya existe un NFT con ese nombre de archivo. Intente otro.');
+        }
+      }
     } else {
-      if (sistema.getNFTByTitulo(tit) != null) {
-        alert('Ya existe un NFT con ese titulo. Intente otro titulo.');
-      }
-      if (sistema.getNFTByPath(path) != null) {
-        alert('Ya existe un NFT con ese nombre de archivo. Intente otro.');
-      }
+      alert('No hay un usuario logeado. Intente nuevamente luego de iniciar sesion.');
     }
-  }
-}
-
-/** logea el usuario
- */
-function login() {
-  const user = document.getElementById('txtUsuarioLogin').value;
-  const password = document.getElementById('txtPasswordLogin').value;
-
-  const currentUser = sistema.getUsuarioByUser(user);
-
-  if (currentUser != null && currentUser.getPassword() == password) {
-    document.getElementById('usernameActual').innerHTML = currentUser.getUsername();
-  } else {
-    alert('El usuario o contraseña son incorrectos. Intente nuevamente.');
   }
 }
 
@@ -194,4 +212,54 @@ function agregarUsuario() {
       alert('Ya existe un usuario con ese nombre. Intente con uno diferente.');
     }
   }
+}
+
+/** logea el usuario
+ */
+function login() {
+  const user = document.getElementById('txtUsuarioLogin').value;
+  const password = document.getElementById('txtPasswordLogin').value;
+
+  const currentUser = sistema.getUsuarioByUser(user);
+
+  if (currentUser != null && currentUser.getPassword() == password) {
+    document.getElementById('usernameActual').innerHTML = currentUser.getUsername();
+    actualizaFeeds();
+    creaActionListeners();
+  } else {
+    alert('El usuario o contraseña son incorrectos. Intente nuevamente.');
+  }
+}
+
+/**
+ * @param {NFT} nft
+ */
+function agregaNFTFavoritos(nft) {
+  const curr = document.getElementById('usernameActual').innerHTML;
+  if (curr != '') {
+    const user = sistema.getUsuarioByUser(curr);
+    let existe = false;
+    for (let i=0; i<user.getListaFavs().length; i++) {
+      if (user.getListaFavs()[i] == nft) {
+        existe = true;
+      }
+    }
+    if (existe) {
+      alert('El NFT ya esta marcado como favorito!');
+    } else {
+      user.getListaFavs().push(nft);
+      alert('Se agrego el NFT a la lista de favoritos');
+    }
+  } else {
+    alert('No hay un usuario logeado. Para agregar a favoritos debe iniciar sesion.');
+  }
+  actualizaFeeds();
+  creaActionListeners();
+}
+
+/** alerta con los datos del nft
+ * @param {NFT} nft
+ */
+function funcionAlert(nft) {
+  alert('Titulo: ' + nft.getTitulo() + '\nPrecio: ' + nft.getPrecio() + '\nDescripcion: ' + nft.getDescripcion() + '\nCreador: ' + nft.getCreador() + '\nCategoria: ' + nft.getCategoria());
 }

@@ -118,6 +118,8 @@ export default class Sistema {
     this.addNFT('NFT persona', 500, 'Es un NFT de una persona, bien feo', 'Juan', 'Otros', '../imagenes/nftPersona.jpg');
     this.addNFT('Gatito feo', 500, 'Otro gato mas', 'Juan', 'Otros', '../imagenes/nftCat2.jpg');
     this.addNFT('Una pizza, creo', 500, 'Algo que parece ser una pizza', 'Juan', 'Otros', '../imagenes/nftPizza.jpg');
+
+    this.addUsuario('Juan', 'moli@', 'prueba', []);
   }
 }
 

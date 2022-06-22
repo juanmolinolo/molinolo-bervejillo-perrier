@@ -20,17 +20,45 @@ export default class NFT {
     this.pathImg = pathImg;
   }
 
-  /** retorna el path de la imagen
-   * @return {string}
-   */
-  getPath() {
-    return this.pathImg;
-  }
-
-  /** retorna el titulo de la imagen
+  /** retorna el titulo del nft
    * @return {string}
    */
   getTitulo() {
     return this.titulo;
+  }
+
+  /** retorna el precio del nft
+   * @return {int}
+   */
+  getPrecio() {
+    return this.precio;
+  }
+
+  /** retorna la descripcion del nft
+     * @return {string}
+     */
+  getDescripcion() {
+    return this.descripcion;
+  }
+
+  /** retorna el creador del nft
+     * @return {string}
+     */
+  getCreador() {
+    return this.creador;
+  }
+
+  /** retorna la categoria del nft
+   * @return {string}
+   */
+  getCategoria() {
+    return this.categoria;
+  }
+
+  /** retorna el path del nft
+   * @return {string}
+   */
+  getPath() {
+    return this.pathImg;
   }
 }
