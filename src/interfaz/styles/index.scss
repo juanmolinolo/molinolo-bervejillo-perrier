@@ -1,8 +1,9 @@
 @use "@material/theme" with (
-  $primary: #7744ef,
+  $primary: hsl(258, 84%, 60%),
   $secondary: #3685f4,
   $background: #c7c7c7,
 );
+
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/drawer";
@@ -21,24 +22,29 @@
 @use "@material/list/mdc-list";
 @use "@material/menu-surface/mdc-menu-surface";
 @use "@material/menu/mdc-menu";
+@use '@material/select';
 @use "@material/select/styles";
 @use "@material/snackbar/mdc-snackbar";
 @use "@material/checkbox";
 @use "@material/form-field";
+@use "@material/dialog";
+@use "@material/fab";
+@use "@material/image-list/mdc-image-list";
+@use "@material/image-list";
 
+@include fab.core-styles;
+@include dialog.core-styles;
 @include checkbox.core-styles;
 @include form-field.core-styles;
 @include card.core-styles;
 @include textfield.core-styles;
-
-
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0px auto;
 }
 
@@ -46,6 +52,25 @@ body {
   position: absolute;
 }
 
+//estilo de cartas
+.my-card {
+  height: 25%;
+  width: 25%;
+  border-radius: 5px;
+}
+
+// .mdc-image-list my-image-list {
+//   padding:20%;
+// }
+
+// .mdc-image-list__item{
+//   padding: 20px;
+// }
+
+#lista_nfts {
+  display: inline;
+}
+//
 .mdc-top-app-bar {
   z-index: 7;
   @include icon-button.core-styles;
@@ -53,6 +78,7 @@ body {
 
 section {
   text-align: center;
+  position: relative;
 }
 
 .content {
@@ -78,9 +104,9 @@ section {
     margin: 1rem auto;
 }
 
-.button {
-  margin-top: 1rem;
-}
+// .button {
+//   margin-top: 1rem;
+// }
 
 .mdc-snackbar__actions .mdc-button__label {
   color: #ab67ff;
@@ -95,37 +121,41 @@ section {
     padding: 16px;
 }
 
-.my-card__media {
-    background-color: rgb(32, 32, 32);
-}
-
 .mdc-layout-grid__cell{
     padding: 20px;
-}
-
-.my-card {
-   height: 350px;
-    width: 350px;
 }
 
 .mdc-top-app-bar--fixed-adjust{
   display: flex;
 }
 
-.mdc-drawer{
-  margin: 5rem auto;
-  padding-bottom: 20rem;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.mdc-drawer__header{
-  text-align: center;
-  margin: 5px auto;
-}
-
 .mdc-layout-grid{
   display: block;
   overflow: auto;
   z-index: 0;
+}
+
+.selector-width-class {
+    width: 300px;
+    z-index: 1;
+}
+
+.textfieldTitulo{
+    width: 300px;
+}
+
+.textfieldPrecio{
+    width: 300px;
+}
+
+.agregarWindow{
+  display: block;
+}
+
+.login{
+  padding: 80px;
+}
+
+.usernameActual{
+    text-align: right;
 }

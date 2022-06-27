@@ -5,22 +5,34 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="bundle.css">
   <link rel="stylesheet" type="text/css" href="styles/index.scss" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
 
+  <!-- header incluyendo titulo y el tab bar-->
   <header class="mdc-top-app-bar">
+
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <span class="mdc-top-app-bar__title">NFTs</span>
       </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <!--label conteniendo username actual-->
+        <span class="mdc-top-app-bar__title" id="usernameActual"></span>
+      </section>
     </div>
 
+    <!--tab bar-->
     <div class="mdc-tab-bar" role="tablist">
       <div class="mdc-tab-scroller">
         <div class="mdc-tab-scroller__scroll-area">
           <div class="mdc-tab-scroller__scroll-content">
-
+            <!--botones de tab bar-->
             <button class="mdc-tab mdc-tab--active sample-content-tab" role="tab" aria-selected="true" tabindex="0">
               <span class="mdc-tab__content">
                 <span class="mdc-tab__text-label">FEED</span>
@@ -41,280 +53,239 @@
               </span>
               <span class="mdc-tab__ripple"></span>
             </button>
+
+            <button class="mdc-tab sample-content-tab" role="tab" aria-selected="false" tabindex="1">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">AGREGAR</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+
+            <button class="mdc-tab sample-content-tab" role="tab" aria-selected="false" tabindex="1">
+              <span class="mdc-tab__content">
+                <span class="mdc-tab__text-label">PERFIL</span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+              </span>
+              <span class="mdc-tab__ripple"></span>
+            </button>
+
           </div>
         </div>
       </div>
     </div>
+  
   </header>
 
   <main class="mdc-top-app-bar--fixed-adjust">
 
-    <aside class="mdc-drawer">
-      <header class="mdc-drawer__header">Categorías</header>
-      <div class="mdc-drawer__content">
-        <nav class="mdc-list">
-          <div class="mdc-form-field">
-            <div class="mdc-checkbox">
-              <input type="checkbox"
-                     class="mdc-checkbox__native-control"
-                     id="checkbox-1"/>
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark"
-                     viewBox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path"
-                        fill="none"
-                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-              <div class="mdc-checkbox__ripple"></div>
-            </div>
-            <label for="checkbox-1">Filtro 1</label>
-          </div>
-
-          <div class="mdc-form-field">
-            <div class="mdc-checkbox">
-              <input type="checkbox"
-                     class="mdc-checkbox__native-control"
-                     id="checkbox-2"/>
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark"
-                     viewBox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path"
-                        fill="none"
-                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-              <div class="mdc-checkbox__ripple"></div>
-            </div>
-            <label for="checkbox-2">Filtro 2</label>
-          </div>
-
-          <div class="mdc-form-field">
-            <div class="mdc-checkbox">
-              <input type="checkbox"
-                     class="mdc-checkbox__native-control"
-                     id="checkbox-3"/>
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark"
-                     viewBox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path"
-                        fill="none"
-                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-              <div class="mdc-checkbox__ripple"></div>
-            </div>
-            <label for="checkbox-3">Filtro 3</label>
-          </div>
-  
-          <div class="mdc-slider mdc-slider--range">
-            <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" aria-label="Range slider demo">
-            <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" aria-label="Range slider demo">
-            <div class="mdc-slider__track">
-              <div class="mdc-slider__track--inactive"></div>
-              <div class="mdc-slider__track--active">
-                <div class="mdc-slider__track--active_fill"
-                     style="transform:scaleX(.4); left:30%"></div>
-              </div>
-            </div>
-            <div class="mdc-slider__thumb" style="left:calc(30%-24px)">
-              <div class="mdc-slider__thumb-knob"></div>
-            </div>
-            <div class="mdc-slider__thumb" style="left:calc(70%-24px)">
-              <div class="mdc-slider__thumb-knob"></div>
-            </div>
-          </div>
-  
-        </nav>
-      </div>
-    </aside>
-
-    <section class="content">
-    
-      <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner wrapper">
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square my-card__media">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-    
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-    
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-    
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
-            </div>
-    
-          </div>
-        </div>
+    <!--tab de feed-->
+    <section id = "feedWindow" class="content">
+      <!--grid layout de feed-->
+      <div id="lista_nfts">
+        <ul class="mdc-image-list my-image-list" id="lista_nfts_interna"> 
+          <!--Cargado dinamicamente desde JS--> 
+        </ul>
       </div>
 
     </section>
 
-    <section class="content sample-content--hidden">
-      <div class="mdc-layout-grid">
-        <h1>FAVORITOS</h1>
-        <div class="mdc-layout-grid__inner wrapper">
-          <div class="mdc-layout-grid__cell">
-    
-            <div class="mdc-card my-card">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <div class="mdc-card__media mdc-card__media--square my-card__media">
-                  <div class="mdc-card__media-content my-card-content"></div>
-                </div>
-                <div class="mdc-card__ripple"></div>
-              </div>
-              <div class="mdc-card mdc-card--outlined">
-                Titulo, descripcion, precio
-              </div>
+    <!--tab de favoritos-->
+    <section id="favoritosWindow" class="content sample-content--hidden">
+      <!--grid layout de favs-->
+      <div id="lista_nfts_favs">
+        <ul class="mdc-image-list my-image-list" id="lista_nfts_interna_favs"> 
+          <!--Cargado dinamicamente desde JS--> 
+        </ul>
+      </div>
+      
+    </section>
+
+    <!--tab de agregar nft-->
+    <section id="agregarWindow" class="content sample-content--hidden"> 
+      <div id="camposAgregar">
+        <form id="idAgregarNFT">
+          <!--div agregarTitulo-->
+          <div id="agregarTitulo">
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtAgregar" required type="text"  class="mdc-text-field__input" placeholder="titulo" required>
+            </label>
+          </div>
+
+          <!--div agregarPrecio-->
+          <div id="agregarPrecio">
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPrecio" required type="number"  class="mdc-text-field__input" placeholder="precio" required>
+            </label>
+          </div>
+
+          <!--div comboBox-->
+          <div class="mdc-select mdc-select--filled selector-width-class mdc-select--required">
+            <div class="mdc-select__anchor" role="button" aria-haspopup="listbox" aria-required = "true" aria-expanded="false" aria-labelledby="demo-label demo-selected-text">
+              <span class="mdc-select__ripple"></span>
+              <span id="demo-label" class="mdc-floating-label">Elegir categoria</span>
+              <span class="mdc-select__selected-text-container">
+                <span id="demo-selected-text" class="mdc-select__selected-text"></span>
+              </span>
+              <span class="mdc-select__dropdown-icon">
+                <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false">
+                  <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                  <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                </svg>
+              </span>
+              <span class="mdc-line-ripple"></span>
             </div>
-    
+
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+              <ul id="idCategoria" class="mdc-list" role="listbox" aria-label="Listbox de categoria">
+                <li class="mdc-list-item" aria-selected="false" data-value="otros" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Otros</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="musica" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Musica</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="fotografia" aria-disabled="true" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Fotografia</span>
+                </li>
+                <li class="mdc-list-item" aria-selected="false" data-value="ilustraciones" role="option">
+                  <span class="mdc-list-item__ripple"></span>
+                  <span class="mdc-list-item__text">Ilustraciones</span>
+                </li>
+              </ul>
+            </div>
           </div>
-    
+
+          <!--div agregarDescripcion-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea mdc-text-field--no-label textareaDescripcion">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <span class="mdc-text-field__resizer">
+                <textarea class="mdc-text-field__input" id="txtDescripcion" rows="6" cols="35" aria-label="Label" placeholder="descripcion"></textarea>
+              </span>
+            </label>
           </div>
-          </section>
+        </form>
+        
+        <!--importar fotos-->
+        <form action="/imagenes">
+          <input id="imagen" type="file">
+        </form>
+
+        <!--boton agregarNFT-->
+        <button id="btnAgregarNFT" type="button" class="mdc-button mdc-dialog__button"
+                data-mdc-dialog-action="ok">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label agregarNFTAFeed">AGREGAR</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!--tab de perfil-->
+    <section id="loginWindow" class="content sample-content--hidden"> 
+
+      <!--div de seccion login-->
+      <div class="mdc-layout-grid login">     
+        <form id="idLogin">
+          <h1>Login</h1>
+          <!--div de texto usuario-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtUsuarioLogin" required type="text"  class="mdc-text-field__input" placeholder="usuario" required>
+            </label>
+          </div>
+
+          <!--div de texto contrasena-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPasswordLogin" required type="password" class="mdc-text-field__input" placeholder="contraseña" required>
+            </label>
+          </div>
+
+          <!--div de boton login-->
+          <button id="btnLogin" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Login</span>
+          </button>  
+        </form>
+      </div>  
+
+      <!--div de seccion crear usuario-->
+      <div class="mdc-layout-grid">     
+        <h1>Crear Usuario</h1>
+        <form id="idCrearUsuario">
+          <!--div de texto usuario-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtUsuarioCrear" required type="text" class="mdc-text-field__input" placeholder="usuario" aria-labelledby="usuario" required>
+            </label>
+          </div>
+
+          <!--div de texto mail-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label">
+              <span class="mdc-notched-outline">
+              <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtMail" required type="text" class="mdc-text-field__input" placeholder="mail" aria-labelledby="mail" required>
+            </label>
+          </div>
+
+          <!--div de texto contrasena-->
+          <div>
+            <label class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label" id="txtContraseña">
+              <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__trailing"></span>
+              </span>
+              <input id="txtPasswordCrear" required type="text" class="mdc-text-field__input" placeholder="contraseña" aria-labelledby="contraseña" required>
+            </label>
+          </div>
+
+          <!--div de boton-->
+          <button id="btnCrearUsuario" type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="ok">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">CREAR</span>
+          </button>
+
+        </form>
+      </div>  
+    </section>
   </main>
 
 </body>
 
-
-
-
-
-<!-- 
-
-<body>
-  
-  <div class="mdc-tab-bar" role="tablist">
-    <div class="mdc-tab-scroller">
-      <div class="mdc-tab-scroller__scroll-area">
-        <div class="mdc-tab-scroller__scroll-content">
-
-          <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">FEED</span>
-            </span>
-            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-
-          <button class="mdc-tab" role="tab" aria-selected="true" tabindex="1">
-            <span class="mdc-tab__content">
-              <span class="mdc-tab__text-label">FAVORITOS</span>
-            </span>
-            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-              <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-            </span>
-            <span class="mdc-tab__ripple"></span>
-          </button>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <section class="content">
-
-    
-    
-  </section>
-
-  <section class="content sample-content--hidden">
-    Favoritos
-  </section>
-  
-
-
-</body>
-
--->
 
 <script src="bundle.js" async></script>
 
